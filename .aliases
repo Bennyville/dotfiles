@@ -13,6 +13,7 @@ alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d
 alias lswifi="airport -s"
 alias ip="curl https://v4.ifconfig.co"
 alias ipv6="curl https://v6.ifconfig.co"
+alias lip="ipconfig getifaddr en0"
 alias pingtest="ping -c 5 google.de"
 
 # Weather
