@@ -1,0 +1,38 @@
+# ZSH
+alias zshconfig="subl ~/.zshrc"
+alias ohmyzsh="subl ~/.oh-my-zsh"
+
+alias zshrcrf="source ~/.zshrc"
+
+# Navigation
+alias projects="cd ~/Sites/Arbeit/"
+alias freya="cd ~/Sites/Arbeit/freya"
+
+# General
+alias lswifi="airport -s"
+alias ip="curl https://v4.ifconfig.co"
+alias ipv6="curl https://v6.ifconfig.co"
+alias pingtest="ping -c 5 google.de"
+
+# Weather
+alias weather="curl http://wttr.in/\?0q" # 0 = only current weather, q = quiet version (no "Weather report" text)
+
+# Mercurial
+alias hgb="hg branch"
+alias hgbs="hg branches"
+alias hgca="hg commit --amend"
+alias hgc="hg commit -m"
+alias hgci="hg commit -im"
+alias hgd="hg diff"
+alias hgl="hg pull"
+alias hgp="hg push"
+alias hgpn="hg push --new-branch"
+alias hgrev="hg id -ir master | pbcopy"
+alias hgs="hg status"
+alias hgu="hg up"
+
+# Vagrant
+alias vh="vagrant halt"
+alias vp="vagrant provision"
+alias vs="vagrant ssh"
+alias vu="vagrant up"
