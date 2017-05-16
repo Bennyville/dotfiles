@@ -7,7 +7,9 @@ rsync --exclude ".git/" \
 	--exclude ".DS_Store" \
 	--exclude "README.md" \
 	--exclude "update.sh" \
-	-navh --no-perms . ~;
+	-avh --no-perms . ~;
+
+source ~/.zshrc
 
 # Brew
 brew update
