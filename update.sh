@@ -12,6 +12,14 @@ rsync --exclude ".git/" \
 source ~/.zshrc
 
 # Brew
-brew update
-brew upgrade
-brew cleanup
+function update_homebrew() {
+	brew update
+	brew upgrade
+	brew cleanup
+}
+
+read "confirm?Update homebrew? (y/n)"
+if [[ "$confirm" =~ ^[Yy]$ ]]
+then
+    update_homebrew
+fi
