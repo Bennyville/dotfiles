@@ -1,3 +1,14 @@
+# General
+alias sudo="sudo "
+alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
+alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+alias lswifi="airport -s"
+alias ip="curl https://v4.ifconfig.co"
+alias ipv6="curl https://v6.ifconfig.co"
+alias lip="ipconfig getifaddr en0"
+alias pingtest="ping -c 5 google.de"
+alias cleardns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
+
 # ZSH
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl ~/.oh-my-zsh"
@@ -7,16 +18,6 @@ alias zshrcrf="source ~/.zshrc"
 # Navigation
 alias projects="cd ~/Sites/Arbeit/"
 alias freya="cd ~/Sites/Arbeit/freya"
-
-# General
-alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
-alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-alias lswifi="airport -s"
-alias ip="curl https://v4.ifconfig.co"
-alias ipv6="curl https://v6.ifconfig.co"
-alias lip="ipconfig getifaddr en0"
-alias pingtest="ping -c 5 google.de"
-alias cleardns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
 # Weather
 alias weather="curl http://wttr.in/\?0q" # 0 = only current weather, q = quiet version (no "Weather report" text)
