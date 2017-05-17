@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 brew upgrade
 brew update
 
