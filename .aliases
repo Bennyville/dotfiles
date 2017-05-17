@@ -15,10 +15,6 @@ alias ohmyzsh="subl ~/.oh-my-zsh"
 
 alias zshrcrf="source ~/.zshrc"
 
-# Navigation
-alias projects="cd ~/Sites/Arbeit/"
-alias freya="cd ~/Sites/Arbeit/freya"
-
 # Weather
 alias weather="curl http://wttr.in/\?0q" # 0 = only current weather, q = quiet version (no "Weather report" text)
 
