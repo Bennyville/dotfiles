@@ -27,5 +27,3 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
-[http]
-	proxy = http://172.16.0.18:8080
