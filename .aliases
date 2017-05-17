@@ -45,6 +45,7 @@ alias hgush="hg unshelve"
 # Vagrant
 alias vh="vagrant halt"
 alias vp="vagrant provision"
+alias vr="vagrant reload"
 alias vs="vagrant ssh"
 alias vst="vagrant status"
 alias vu="vagrant up"
