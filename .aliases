@@ -9,12 +9,6 @@ alias lip="ipconfig getifaddr en0"
 alias pingtest="ping -c 5 google.de"
 alias cleardns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 
-# ZSH
-alias zshconfig="subl ~/.zshrc"
-alias ohmyzsh="subl ~/.oh-my-zsh"
-
-alias zshrcrf="source ~/.zshrc"
-
 # Weather
 alias weather="curl http://wttr.in/\?0q" # 0 = only current weather, q = quiet version (no "Weather report" text)
 
