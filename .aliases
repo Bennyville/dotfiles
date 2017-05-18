@@ -7,6 +7,7 @@ alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 # General
 alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
 alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
+alias rsh="exec $SHELL -l"
 
 # Network
 alias cleardns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
