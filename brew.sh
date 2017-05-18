@@ -4,16 +4,21 @@ brew upgrade
 brew update
 
 # CLI Tools
+brew install coreutils
+brew install ack
+brew install git
 brew install htop
 brew install mercurial
 brew install node
 brew install php70
 brew install python
+brew install python3
 brew install shellcheck
 brew install smartmontools
 brew install speedtest_cli
 brew install task
 brew install thefuck
+brew install tldr
 brew install tree
 brew install wget
 brew install woof
