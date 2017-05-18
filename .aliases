@@ -2,6 +2,7 @@
 alias sudo="sudo "
 alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
 alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
+alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
 alias lswifi="airport -s"
 alias ip="curl https://v4.ifconfig.co"
 alias ipv6="curl https://v6.ifconfig.co"
