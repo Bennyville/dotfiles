@@ -13,6 +13,7 @@ brew install node
 brew install php70
 brew install python
 brew install python3
+brew install rename
 brew install shellcheck
 brew install smartmontools
 brew install speedtest_cli
