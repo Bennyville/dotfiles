@@ -8,6 +8,7 @@ alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/C
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
 alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
+alias kw="date '+%W'"
 alias restart="sudo shutdown -r now"
 alias rsh="exec $SHELL -l"
 alias turnoff="sudo shutdown -h now"
