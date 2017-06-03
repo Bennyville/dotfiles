@@ -21,6 +21,7 @@ brew install task
 brew install thefuck
 brew install tldr
 brew install tree
+brew install unrar
 brew install wget
 brew install woof
 brew install zsh
