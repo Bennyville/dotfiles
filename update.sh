@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+curl -I -L "http://github.com" --silent > /dev/null
+[[ $? -eq 7 ]] && echo "Can't reach github.com. Proxy needed?" && exit
+
 git pull origin master
 
 # Sync dotfiles
