@@ -10,3 +10,8 @@ wifi() {
 		networksetup -setairportpower en0 off
 	fi
 }
+
+# Copy files and replace filename
+copyreplace() {
+	for file in $1; do echo cp "$file" "${file/$2/$3}";done
+}
