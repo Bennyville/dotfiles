@@ -11,3 +11,5 @@ source $ZSH/oh-my-zsh.sh
 for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
+
+export LANG=en_US.UTF-8
