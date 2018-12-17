@@ -2,7 +2,22 @@
 # ZSH
 export ZSH=/Users/bpeckruhn/.oh-my-zsh
 
-ZSH_THEME="honukai"
+SPACESHIP_PROMPT_ORDER=(
+	time
+	user
+	host
+	dir
+	git
+	hg
+	exec_time
+	line_sep
+	vi_mode
+	jobs
+	exit_code
+	char
+)
+
+ZSH_THEME="spaceship"
 
 source $ZSH/oh-my-zsh.sh
 
