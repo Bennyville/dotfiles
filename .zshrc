@@ -28,3 +28,11 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done;
 
 export LANG=en_US.UTF-8
+
+# Make aliases work in tmux
+SOURCE="${(%):-%N}"
+while [ -h "$SOURCE" ]; do
+  DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
+done
