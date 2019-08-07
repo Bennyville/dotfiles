@@ -1,6 +1,9 @@
+
 #!/usr/bin/env zsh
 # ZSH
 export ZSH=/Users/bpeckruhn/.oh-my-zsh
+
+plugins=(thefuck)
 
 SPACESHIP_PROMPT_ORDER=(
 	time
