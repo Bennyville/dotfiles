@@ -1,7 +1,7 @@
 
 #!/usr/bin/env zsh
 # ZSH
-export ZSH=/Users/bpeckruhn/.oh-my-zsh
+export ZSH=/Users/benny/.oh-my-zsh
 
 plugins=(thefuck)
 
