@@ -23,6 +23,9 @@ Plug 'itchyny/lightline.vim'
 " COC - Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Theme
+Plug 'crusoexia/vim-monokai'
+
 " PHP
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
