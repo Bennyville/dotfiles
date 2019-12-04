@@ -23,6 +23,17 @@ Plug 'itchyny/lightline.vim'
 " COC - Completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" PHP
+Plug 'StanAngeloff/php.vim'
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'arnaud-lb/vim-php-namespace'
+
+" Typescript
+Plug 'leafgarland/typescript-vim'
+
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
 " Initialize plugin system
 call plug#end()
 
