@@ -34,6 +34,9 @@ Plug 'editorconfig/editorconfig-vim'
 " dim inactive windows
 Plug 'blueyed/vim-diminactive'
 
+" git integration
+Plug 'tpope/vim-fugitive'
+
 " Initialize plugin system
 call plug#end()
 
