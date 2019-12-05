@@ -10,7 +10,9 @@ brew install ansiweather
 brew install bash
 brew install curl
 brew install elm
+brew install fd
 brew install ffmpeg
+brew install fzf
 brew install gawk
 brew install git
 brew install highlight
