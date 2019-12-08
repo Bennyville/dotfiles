@@ -43,3 +43,4 @@ call plug#end()
 
 source ~/.vim/settings/settings.vim
 source ~/.vim/settings/plugins.vim
+source ~/.vim/settings/mappings.vim
