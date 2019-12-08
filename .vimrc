@@ -27,6 +27,7 @@ Plug 'arnaud-lb/vim-php-namespace'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 " Editorconfig
 Plug 'editorconfig/editorconfig-vim'
