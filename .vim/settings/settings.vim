@@ -22,8 +22,18 @@ set number relativenumber
 set ruler
 set cursorline
 
-" highlight search
+" search
 set hlsearch
+set incsearch
 
 " always show status line
 set laststatus=2
+
+" show whitespace
+set list
+set listchars=tab:>-,trail:·
+
+" disable backup and swap files
+set noswapfile
+set nobackup
+set nowritebackup
