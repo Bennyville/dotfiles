@@ -211,3 +211,14 @@ function! LightlineReload()
     call lightline#colorscheme()
     call lightline#update()
 endfunction
+
+" FZF
+nnoremap <silent> <C-p> :Files<CR>
+nnoremap <silent> <C-b> :Buffers<CR>
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<C-j>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
+let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.config/nvim/UltiSnips']
+let g:UltiSnipsEnableSnipMate = 0
