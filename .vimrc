@@ -38,9 +38,12 @@ Plug 'blueyed/vim-diminactive'
 " git integration
 Plug 'tpope/vim-fugitive'
 
+" Snippets
+Plug 'SirVer/ultisnips'
+
 " Initialize plugin system
 call plug#end()
 
 source ~/.vim/settings/settings.vim
-source ~/.vim/settings/plugins.vim
 source ~/.vim/settings/mappings.vim
+source ~/.vim/settings/plugins.vim
