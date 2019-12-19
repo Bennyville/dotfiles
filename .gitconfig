@@ -27,3 +27,5 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
+[commit]
+    verbose = true
