@@ -41,6 +41,9 @@ Plug 'tpope/vim-fugitive'
 " Snippets
 Plug 'SirVer/ultisnips'
 
+" Surround
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
 
