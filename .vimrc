@@ -44,6 +44,18 @@ Plug 'SirVer/ultisnips'
 " Surround
 Plug 'tpope/vim-surround'
 
+" Vue
+Plug 'posva/vim-vue'
+
+" Session management
+Plug 'tpope/vim-obsession'
+
+" Blade templating syntax
+Plug 'jwalton512/vim-blade'
+
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+
 " Initialize plugin system
 call plug#end()
 
