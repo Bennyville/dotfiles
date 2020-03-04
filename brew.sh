@@ -18,6 +18,7 @@ brew install git
 brew install highlight
 brew install htop
 brew install mercurial
+brew install mozjpeg
 brew install nmap
 brew install node
 brew install php70
