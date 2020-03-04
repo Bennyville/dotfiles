@@ -222,3 +222,12 @@ let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir = $HOME."/.config/nvim/UltiSnips"
 let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.config/nvim/UltiSnips']
 let g:UltiSnipsEnableSnipMate = 0
+
+" vim-php-namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
