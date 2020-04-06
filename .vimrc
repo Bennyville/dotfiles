@@ -56,6 +56,12 @@ Plug 'jwalton512/vim-blade'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 
+" Elm
+Plug 'elmcast/elm-vim'
+
+" nginx
+Plug 'chr4/nginx.vim'
+
 " Initialize plugin system
 call plug#end()
 
