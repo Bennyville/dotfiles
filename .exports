@@ -1,6 +1,7 @@
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow"
+export JDK_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java"
 
 export LDFLAGS="-L/usr/local/opt/mozjpeg/lib"
 export CPPFLAGS="-I/usr/local/opt/mozjpeg/include"
