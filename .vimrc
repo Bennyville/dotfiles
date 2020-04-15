@@ -62,6 +62,13 @@ Plug 'elmcast/elm-vim'
 " nginx
 Plug 'chr4/nginx.vim'
 
+" commentary
+Plug 'tpope/vim-commentary'
+
+" custom text objects
+Plug 'kana/vim-textobj-user'
+Plug 'jasonlong/vim-textobj-css'
+
 " Initialize plugin system
 call plug#end()
 
