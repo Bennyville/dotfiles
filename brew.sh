@@ -21,6 +21,7 @@ brew install mercurial
 brew install mozjpeg
 brew install nmap
 brew install node
+brew install nvim
 brew install php70
 brew install pv
 brew install python
