@@ -69,6 +69,18 @@ Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'jasonlong/vim-textobj-css'
 
+" Mercurial
+Plug 'ludovicchabant/vim-lawrencium'
+
+" Display images as ASCII instead of binary, because you can
+Plug 'ashisha/image.vim'
+
+" XML
+Plug 'othree/xml.vim'
+
+" highlight yanked lines
+Plug 'machakann/vim-highlightedyank'
+
 " Initialize plugin system
 call plug#end()
 
