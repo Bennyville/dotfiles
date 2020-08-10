@@ -81,6 +81,9 @@ Plug 'othree/xml.vim'
 " highlight yanked lines
 Plug 'machakann/vim-highlightedyank'
 
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Initialize plugin system
 call plug#end()
 
