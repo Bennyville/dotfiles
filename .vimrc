@@ -41,6 +41,49 @@ Plug 'tpope/vim-fugitive'
 " Snippets
 Plug 'SirVer/ultisnips'
 
+" Surround
+Plug 'tpope/vim-surround'
+
+" Vue
+Plug 'posva/vim-vue'
+
+" Session management
+Plug 'tpope/vim-obsession'
+
+" Blade templating syntax
+Plug 'jwalton512/vim-blade'
+
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+
+" Elm
+Plug 'elmcast/elm-vim'
+
+" nginx
+Plug 'chr4/nginx.vim'
+
+" commentary
+Plug 'tpope/vim-commentary'
+
+" custom text objects
+Plug 'kana/vim-textobj-user'
+Plug 'jasonlong/vim-textobj-css'
+
+" Mercurial
+Plug 'ludovicchabant/vim-lawrencium'
+
+" Display images as ASCII instead of binary, because you can
+Plug 'ashisha/image.vim'
+
+" XML
+Plug 'othree/xml.vim'
+
+" highlight yanked lines
+Plug 'machakann/vim-highlightedyank'
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
 " Initialize plugin system
 call plug#end()
 

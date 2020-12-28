@@ -15,7 +15,6 @@ set nowrap
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set expandtab
 
 " line numbers
 set number relativenumber
