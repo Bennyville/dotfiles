@@ -54,6 +54,7 @@ brew cask install docker
 brew cask install firefox
 brew cask install google-chrome
 brew cask install java
+brew cask install monitorcontrol
 brew cask install phpstorm
 brew cask install pycharm-ce
 brew cask install sequel-pro
