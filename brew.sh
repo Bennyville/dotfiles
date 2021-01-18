@@ -9,6 +9,7 @@ brew install ack
 brew install ansiweather
 brew install bash
 brew install curl
+brew install duf
 brew install elm
 brew install fd
 brew install ffmpeg
