@@ -39,7 +39,7 @@ Plug 'blueyed/vim-diminactive'
 Plug 'tpope/vim-fugitive'
 
 " Snippets
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " Surround
 Plug 'tpope/vim-surround'
