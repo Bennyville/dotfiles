@@ -49,25 +49,16 @@ brew install zsh
 brew install zsh-completions
 
 # Application
-brew cask install 1password
-brew cask install 1password-cli
-brew cask install alfred
-brew cask install appcleaner
-brew cask install docker
-brew cask install firefox
-brew cask install google-chrome
-brew cask install java
-brew cask install monitorcontrol
-brew cask install phpstorm
-brew cask install pycharm-ce
-brew cask install sequel-pro
-brew cask install sketch
-brew cask install sublime-text-dev
-brew cask install tortoisehg
-brew cask install transmit
-brew cask install vagrant
-brew cask install virtualbox
-brew cask install visual-studio-code
-brew cask install vlc
+brew install 1password
+brew install 1password-cli
+brew install alfred
+brew install appcleaner
+brew install docker
+brew install firefox
+brew install google-chrome
+brew install java
+brew install monitorcontrol
+brew install phpstorm
+brew install vlc
 
 brew cleanup
