@@ -56,6 +56,9 @@ Plug 'jwalton512/vim-blade'
 " Elixir
 Plug 'elixir-editors/vim-elixir'
 
+" Phoenix Framework
+Plug 'avdgaag/vim-phoenix'
+
 " Elm
 Plug 'elmcast/elm-vim'
 
