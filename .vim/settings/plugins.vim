@@ -269,3 +269,6 @@ filetype plugin on
 let g:coc_filetype_map = {
 			\ 'blade': 'html',
 			\ }
+
+" Elixir
+autocmd FileType elixir let b:coc_root_patterns = ['mix.exs']
