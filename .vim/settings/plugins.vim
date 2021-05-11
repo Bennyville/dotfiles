@@ -263,6 +263,15 @@ if executable('intelephense')
   augroup END
 endif
 
+" pdv
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates"
+
+" vim-php-refactoring-toolbox
+let g:vim_php_refactoring_default_property_visibility = 'private'
+let g:vim_php_refactoring_default_method_visibility = 'private'
+let g:vim_php_refactoring_auto_validate_visibility = 1
+let g:vim_php_refactoring_phpdoc = "pdv#DocumentCurrentLine"
+
 " XML
 filetype plugin on
 
