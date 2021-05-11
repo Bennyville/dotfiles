@@ -5,3 +5,4 @@ export JDK_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/Current/Co
 
 export LDFLAGS="-L/usr/local/opt/mozjpeg/lib"
 export CPPFLAGS="-I/usr/local/opt/mozjpeg/include"
+export EDITOR="nvim"
