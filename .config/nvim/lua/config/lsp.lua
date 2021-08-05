@@ -34,6 +34,10 @@ local on_attach = function(client, bufnr)
   require('completion').on_attach(client)
 end
 
+--Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 local path_to_elixirls = vim.fn.expand("~/.config/nvim/lspconfig/elixirls/language_server.sh")
 
 lspconfig.elixirls.setup{
@@ -51,4 +55,15 @@ lspconfig.elixirls.setup{
 
 lspconfig.phpactor.setup{
 	on_attach = on_attach
+}
+
+lspconfig.cssls.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+lspconfig.html.setup{
+	on_attach = on_attach,
+	filetypes = { "html", "php" },
+	capabilities = capabilities
 }
