@@ -49,3 +49,6 @@ lspconfig.elixirls.setup{
 	}
 }
 
+lspconfig.phpactor.setup{
+	on_attach = on_attach
+}
