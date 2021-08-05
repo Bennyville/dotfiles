@@ -24,6 +24,12 @@ Plug 'crusoexia/vim-monokai'
 Plug 'StanAngeloff/php.vim'
 Plug 'stephpy/vim-php-cs-fixer'
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'tobyS/pdv'
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'phpactor/phpactor', {'for': 'php', 'branch': 'master', 'do': 'composer install --no-dev -o'}
+
+" Mustache
+Plug 'tobyS/vmustache'
 
 " Typescript
 Plug 'leafgarland/typescript-vim'
@@ -86,6 +92,9 @@ Plug 'machakann/vim-highlightedyank'
 
 " Rust
 Plug 'rust-lang/rust.vim'
+
+" neomake
+Plug 'neomake/neomake'
 
 " Initialize plugin system
 call plug#end()

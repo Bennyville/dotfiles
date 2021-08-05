@@ -36,3 +36,6 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·
 set noswapfile
 set nobackup
 set nowritebackup
+
+" ruler
+set colorcolumn=80,120
