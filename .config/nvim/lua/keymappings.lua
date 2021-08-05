@@ -17,3 +17,6 @@ map('', '<Leader><Esc>', ':set hlsearch!<CR>', { noremap = true, silent = true }
 -- fzf
 map('', '<C-p>', ':Files<CR>', { noremap = true, silent = true })
 map('', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
+
+-- nerdtree
+map('', '<leader>n', ':NERDTreeFocus<CR>', { noremap = true, silent = true })
