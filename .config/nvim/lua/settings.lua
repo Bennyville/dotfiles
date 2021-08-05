@@ -1,18 +1,13 @@
-local lspconfig = require("lspconfig")
-local completion = require("completion")
+local o = vim.o;
+local b = vim.bo;
+local w = vim.wo;
 
-local path_to_elixirls = vim.fn.expand("~/.config/nvim/lspconfig/elixirls/language_server.sh")
+local cmd = vim.cmd;
 
-lspconfig.elixirls.setup{
-	cmd = {path_to_elixirls},
-	on_attach = completion.on_attach,
-	settings = {
-		elixirLS = {
-			-- I also choose to turn off the auto dep fetching feature.
-			-- It often get's into a weird state that requires deleting
-			-- the .elixir_ls directory and restarting your editor.
-			fetchDeps = false
-		}
-	}
-}
+cmd 'syntax on';
+cmd 'filetype plugin indent on';
+
+b.expandtab = true;
+w.number = true;
+w.relativenumber = true;
 
