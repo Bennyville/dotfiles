@@ -15,13 +15,25 @@ return require('packer').startup(function()
 	-- file browser 
 	use { 'scrooloose/nerdtree' }
 
+	-- dim inactive windows
+	use { 'blueyed/vim-diminactive' }
+
 	-- fuzzy search 
 	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 	use { 'junegunn/fzf.vim' }
 
 	-- ctags generator
 	use { 'ludovicchabant/vim-gutentags' }
+
+	-- movements/mapping for surrounding tokens
+	use { 'tpope/vim-surround' }
+
+	-- code comments
+	use { 'tpope/vim-commentary' }
 	
 	-- elixir
 	use { 'elixir-editors/vim-elixir' }
+
+	-- xml
+	use { 'othree/xml.vim' }
 end)
