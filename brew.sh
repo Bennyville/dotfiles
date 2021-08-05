@@ -33,6 +33,7 @@ brew install smartmontools
 brew install speedtest_cli
 brew install svgo
 brew install task
+brew install the_silver_searcher
 brew install thefuck
 brew install tidy-html5
 brew install tldr
