@@ -1,13 +1,40 @@
-local o = vim.o;
-local b = vim.bo;
-local w = vim.wo;
+vim.cmd 'syntax on';
+vim.cmd 'filetype plugin indent on';
 
-local cmd = vim.cmd;
+-- hide unsaved buffers
+vim.o.hidden = true
 
-cmd 'syntax on';
-cmd 'filetype plugin indent on';
+-- use case insensitive search, except when using capital letters
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
-b.expandtab = true;
-w.number = true;
-w.relativenumber = true;
+-- indentation
+vim.wo.wrap = false
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
 
+-- line numbers
+vim.o.number = true
+vim.o.relativenumber = true
+vim.o.ruler = true
+vim.o.cursorline = true
+
+-- search
+vim.o.hlsearch = true
+vim.o.incsearch = true
+
+-- always show status line
+vim.o.laststatus = 2
+
+-- show whitespace
+vim.o.list = true
+vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·"
+
+-- disable backup and swap files
+vim.o.swapfile = false
+vim.o.backup = false
+vim.o.writebackup = false
+
+-- ruler
+vim.o.colorcolumn = "80,120"
