@@ -1,5 +1,4 @@
--- map leader key to ,
-vim.g.mapleader = ','
+require('keymappings')
 
 local fn = vim.fn
 local execute = vim.api.nvim_command
