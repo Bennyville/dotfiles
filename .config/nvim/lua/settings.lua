@@ -13,6 +13,8 @@ vim.wo.wrap = false
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = 4
+vim.bo.autoindent = true
+vim.bo.smartindent = true
 
 -- line numbers
 vim.o.number = true
