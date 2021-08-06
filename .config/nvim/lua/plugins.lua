@@ -9,6 +9,12 @@ return require('packer').startup(function()
 	use { 'neovim/nvim-lspconfig' }
 	use { 'nvim-lua/completion-nvim' }
 
+	-- treesitter
+	use {
+		'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+	} 
+
 	-- Lua development
 	use { 'tjdevries/nlua.nvim' }
 
@@ -32,7 +38,7 @@ return require('packer').startup(function()
 	use { 'tpope/vim-commentary' }
 	
 	-- elixir
-	use { 'elixir-editors/vim-elixir' }
+	-- use { 'elixir-editors/vim-elixir' }
 
 	-- xml
 	use { 'othree/xml.vim' }
