@@ -1,6 +1,6 @@
--- Use <Tab> and <S-Tab> to navigate through popup menu
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
+-- Use <Tab> and <S-Tab> as trigger
+vim.cmd 'imap <Tab> <Plug>(completion_smart_tab)'
+vim.cmd 'imap <S-Tab> <Plug>(completion_smart_s_tab)'
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt="menuone,noinsert,noselect"
