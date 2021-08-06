@@ -56,7 +56,7 @@ lspconfig.elixirls.setup{
 	}
 }
 
-lspconfig.phpactor.setup{
+lspconfig.intelephense.setup{
 	on_attach = on_attach
 }
 
