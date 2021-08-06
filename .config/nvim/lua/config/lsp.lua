@@ -1,4 +1,5 @@
 local lspconfig = require("lspconfig")
+local configs = require("lspconfig/configs")
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -70,3 +71,25 @@ lspconfig.html.setup{
 	filetypes = { "html", "php" },
 	capabilities = capabilities
 }
+
+lspconfig.tsserver.setup{
+	on_attach = on_attach,
+	capabilities = capabilities
+}
+
+
+if not lspconfig.emmet_ls then    
+  configs.emmet_ls = {    
+    default_config = {    
+      cmd = {'emmet-ls', '--stdio'};
+      filetypes = {'html', 'css', 'php'};
+      root_dir = function(fname)    
+        return vim.loop.cwd()
+      end;    
+      settings = {};    
+    };    
+  }    
+end    
+
+lspconfig.emmet_ls.setup{ capabilities = capabilities; }
+
