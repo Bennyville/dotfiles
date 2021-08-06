@@ -6,8 +6,32 @@ return require('packer').startup(function()
 	use { 'crusoexia/vim-monokai' }
 
 	-- LSP and completion
-	use { 'neovim/nvim-lspconfig' }
-	use { 'nvim-lua/completion-nvim' }
+	-- use { 'neovim/nvim-lspconfig' }
+	-- use { 'nvim-lua/completion-nvim' }
+
+	-- coc
+	use {
+		'neoclide/coc.nvim',
+		branch = 'release'
+	}
+
+	-- coc extensions
+	use {
+		'neoclide/coc-phpls',
+		run = 'yarn install --frozen-lockfile'
+	}
+	use {
+		'neoclide/coc-html',
+		run = 'yarn install --frozen-lockfile'
+	}
+	use {
+		'neoclide/coc-css',
+		run = 'yarn install --frozen-lockfile'
+	}
+	use {
+		'neoclide/coc-tsserver',
+		run = 'yarn install --frozen-lockfile'
+	}
 
 	-- treesitter
 	use {
