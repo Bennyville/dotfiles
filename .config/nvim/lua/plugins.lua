@@ -62,7 +62,7 @@ return require('packer').startup(function()
 	use { 'tpope/vim-commentary' }
 	
 	-- elixir
-	-- use { 'elixir-editors/vim-elixir' }
+	use { 'elixir-editors/vim-elixir' }
 
 	-- xml
 	use { 'othree/xml.vim' }
