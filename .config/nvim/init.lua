@@ -14,9 +14,8 @@ vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when th
 
 require('plugins')
 
--- require('config.lsp')
--- require('config.completion')
+require('config.lsp')
+require('config.completion')
 require('config.treesitter')
 require('config.colorscheme')
 require('config.nerdtree')
-require('config.gutentags')

@@ -6,32 +6,37 @@ return require('packer').startup(function()
 	use { 'crusoexia/vim-monokai' }
 
 	-- LSP and completion
-	-- use { 'neovim/nvim-lspconfig' }
+	use { 'neovim/nvim-lspconfig' }
 	-- use { 'nvim-lua/completion-nvim' }
+	use { 'hrsh7th/cmp-nvim-lsp' }
+	use { 'hrsh7th/cmp-buffer' }
+	use { 'hrsh7th/nvim-cmp' }
+	use { 'hrsh7th/cmp-vsnip' }
+	use { 'hrsh7th/vim-vsnip' }
 
 	-- coc
-	use {
-		'neoclide/coc.nvim',
-		branch = 'release'
-	}
+	-- use {
+	-- 	'neoclide/coc.nvim',
+	-- 	branch = 'release'
+	-- }
 
-	-- coc extensions
-	use {
-		'neoclide/coc-phpls',
-		run = 'yarn install --frozen-lockfile'
-	}
-	use {
-		'neoclide/coc-html',
-		run = 'yarn install --frozen-lockfile'
-	}
-	use {
-		'neoclide/coc-css',
-		run = 'yarn install --frozen-lockfile'
-	}
-	use {
-		'neoclide/coc-tsserver',
-		run = 'yarn install --frozen-lockfile'
-	}
+	-- -- coc extensions
+	-- use {
+	-- 	'neoclide/coc-phpls',
+	-- 	run = 'yarn install --frozen-lockfile'
+	-- }
+	-- use {
+	-- 	'neoclide/coc-html',
+	-- 	run = 'yarn install --frozen-lockfile'
+	-- }
+	-- use {
+	-- 	'neoclide/coc-css',
+	-- 	run = 'yarn install --frozen-lockfile'
+	-- }
+	-- use {
+	-- 	'neoclide/coc-tsserver',
+	-- 	run = 'yarn install --frozen-lockfile'
+	-- }
 
 	-- treesitter
 	use {
@@ -51,9 +56,6 @@ return require('packer').startup(function()
 	-- fuzzy search 
 	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 	use { 'junegunn/fzf.vim' }
-
-	-- ctags generator
-	use { 'ludovicchabant/vim-gutentags' }
 
 	-- movements/mapping for surrounding tokens
 	use { 'tpope/vim-surround' }
