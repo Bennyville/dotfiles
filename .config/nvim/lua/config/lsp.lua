@@ -89,6 +89,12 @@ lspconfig.elixirls.setup{
 	capabilities = capabilities
 }
 
+lspconfig.efm.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"elixir"}
+})
+
 -- lspconfig.intelephense.setup{
 -- 	on_attach = on_attach
 -- }
