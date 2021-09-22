@@ -1,5 +1,28 @@
-local lspconfig = require("lspconfig")
-local configs = require("lspconfig/configs")
+local lspconfig = require'lspconfig'
+local configs = require'lspconfig/configs'
+local cmp = require'cmp'
+
+cmp.setup({
+	snippet = {
+      expand = function(args)
+        -- For `vsnip` user.
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+      end,
+    },
+	mapping = {
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+		['<CR>'] = cmp.mapping.confirm({ select = false }),
+		['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' })
+	},
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'vsnip' },
+		{ name = 'buffer' },
+	}
+})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -31,8 +54,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-
-  require('completion').on_attach(client)
 end
 
 vim.cmd 'autocmd FileType php setlocal iskeyword+=$'
@@ -41,42 +62,9 @@ vim.cmd 'autocmd FileType javascript setlocal iskeyword+=$'
 --Enable (broadcasting) snippet capability for completion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local path_to_elixirls = vim.fn.expand("~/.config/nvim/lspconfig/elixirls/language_server.sh")
-
-lspconfig.elixirls.setup{
-	cmd = {path_to_elixirls},
-	on_attach = on_attach,
-	settings = {
-		elixirLS = {
-			-- I also choose to turn off the auto dep fetching feature.
-			-- It often get's into a weird state that requires deleting
-			-- the .elixir_ls directory and restarting your editor.
-			fetchDeps = false
-		}
-	}
-}
-
-lspconfig.intelephense.setup{
-	on_attach = on_attach
-}
-
-lspconfig.cssls.setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
-lspconfig.html.setup{
-	on_attach = on_attach,
-	filetypes = { "html", "php" },
-	capabilities = capabilities
-}
-
-lspconfig.tsserver.setup{
-	on_attach = on_attach,
-	capabilities = capabilities
-}
-
 
 if not lspconfig.emmet_ls then    
   configs.emmet_ls = {    
@@ -91,5 +79,58 @@ if not lspconfig.emmet_ls then
   }    
 end    
 
-lspconfig.emmet_ls.setup{ capabilities = capabilities; }
+local servers = {'intelephense', 'cssls', 'tsserver', 'emmet_ls'}
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup {
+		on_attach = on_attach,
+		capabilities = capabilities
+	}
+end
+
+lspconfig.html.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"html", "php"}
+}
+
+lspconfig.elixirls.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+	cmd = {path_to_elixirls},
+	settings = {
+		elixirLS = {
+			-- I also choose to turn off the auto dep fetching feature.
+			-- It often get's into a weird state that requires deleting
+			-- the .elixir_ls directory and restarting your editor.
+			fetchDeps = false
+		}
+	},
+}
+
+lspconfig.efm.setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = {"elixir"}
+})
+
+-- lspconfig.intelephense.setup{
+-- 	on_attach = on_attach
+-- }
+
+-- lspconfig.cssls.setup{
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities
+-- }
+
+-- lspconfig.html.setup{
+-- 	on_attach = on_attach,
+-- 	filetypes = { "html", "php" },
+-- 	capabilities = capabilities
+-- }
+
+-- lspconfig.tsserver.setup{
+-- 	on_attach = on_attach,
+-- 	capabilities = capabilities
+-- }
 

@@ -24,26 +24,3 @@ map('', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
 -- nerdtree
 map('', '<leader>n', ':NERDTreeFocus<CR>', { noremap = true, silent = true })
 
--- coc
--- GoTo code navigation.
-map('n', 'gd', '<Plug>(coc-definition)', {silent = true})
-map('n', 'gy', '<Plug>(coc-type-definition)', {silent = true})
-map('n', 'gi', '<Plug>(coc-implementation)', {silent = true})
-map('n', 'gr', '<Plug>(coc-references)', {silent = true})
-
-map('n', 'K', ':lua show_documentation()', { noremap = false, silent = false });
-
-function show_documentation()
-	local filetype = vim.bo.filetype
-
-	if filetype == 'vim'  or filetype == 'help' then
-		vim.api.nvim_command('h ' .. filetype)
-	elseif vim.call('coc#rpc#ready') then
-		vim.fn.CocActionAsync('doHover')
-	else
-		vim.api.nvim_command(
-		"!" .. vim.bo.keywordprg .. " " .. vim.fn.expand("<cword>")
-		)
-	end
-end
-
