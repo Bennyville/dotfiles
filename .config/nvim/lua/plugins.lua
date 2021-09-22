@@ -66,4 +66,10 @@ return require('packer').startup(function()
 
 	-- xml
 	use { 'othree/xml.vim' }
+	
+	-- mercurial
+	use { 'ludovicchabant/vim-lawrencium' }
+
+	-- session management
+	use { 'tpope/vim-obsession' }
 end)
