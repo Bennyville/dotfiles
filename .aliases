@@ -30,6 +30,7 @@ alias hgo="hg outgoing -G --pager always --color always --template '\033[0;31m{n
 alias hgrpt="hg log --pager always --no-merges -d 'today' -u 'Benny Peckruhn' --template '\033[0;33m{bookmarks} {branches} \033[0m{desc|firstline|strip} \033[0;32m({date|age})\033[0m\n'"
 alias hgrpy="hg log --pager always --no-merges -d 'yesterday' -u 'Benny Peckruhn' --template '\033[0;33m{bookmarks} {branches} \033[0m{desc|firstline|strip} \033[0;32m({date|age})\033[0m\n'"
 alias hgslg="hg log -l 10 --color always --template '\033[0;33m{node|short} {branches} {tags} \033[0;34m{author|person} \033[0m{desc|firstline} \033[0;32m({date|age})\n'"
+alias hgdaily="hg log --color always -r \"date('-4') and author('Benny Peckruhn')\"  --template '\''\033[0;33m{node|short} {branches} {tags} \033[0;34m{author|person} \033[0m{desc|firstline} \033[0;32m({date|age})\n'"
 
 # Git
 alias ga="git add"
