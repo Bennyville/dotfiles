@@ -66,7 +66,20 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local path_to_elixirls = vim.fn.expand("~/.config/nvim/lspconfig/elixirls/language_server.sh")
 
-local servers = {'intelephense', 'cssls', 'html', 'tsserver'}
+if not lspconfig.emmet_ls then    
+  configs.emmet_ls = {    
+    default_config = {    
+      cmd = {'emmet-ls', '--stdio'};
+      filetypes = {'html', 'css', 'php'};
+      root_dir = function(fname)    
+        return vim.loop.cwd()
+      end;    
+      settings = {};    
+    };    
+  }    
+end    
+
+local servers = {'intelephense', 'cssls', 'tsserver', 'emmet_ls'}
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
@@ -75,9 +88,16 @@ for _, lsp in ipairs(servers) do
 	}
 end
 
+lspconfig.html.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  filetypes = {"html", "php"}
+}
+
 lspconfig.elixirls.setup{
-	cmd = {path_to_elixirls},
+	capabilities = capabilities,
 	on_attach = on_attach,
+	cmd = {path_to_elixirls},
 	settings = {
 		elixirLS = {
 			-- I also choose to turn off the auto dep fetching feature.
@@ -86,13 +106,12 @@ lspconfig.elixirls.setup{
 			fetchDeps = false
 		}
 	},
-	capabilities = capabilities
 }
 
 lspconfig.efm.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
-  filetypes = {"elixir"}
+	capabilities = capabilities,
+	on_attach = on_attach,
+	filetypes = {"elixir"}
 })
 
 -- lspconfig.intelephense.setup{
@@ -114,18 +133,4 @@ lspconfig.efm.setup({
 -- 	on_attach = on_attach,
 -- 	capabilities = capabilities
 -- }
-
-
-if not lspconfig.emmet_ls then    
-  configs.emmet_ls = {    
-    default_config = {    
-      cmd = {'emmet-ls', '--stdio'};
-      filetypes = {'html', 'css', 'php'};
-      root_dir = function(fname)    
-        return vim.loop.cwd()
-      end;    
-      settings = {};    
-    };    
-  }    
-end    
 
