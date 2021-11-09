@@ -62,6 +62,9 @@ return require('packer').startup(function()
 
 	-- code comments
 	use { 'tpope/vim-commentary' }
+	use { 'kkoomen/vim-doge',
+		run = ':call doge#install()'
+	}
 	
 	-- elixir
 	use { 'elixir-editors/vim-elixir' }
