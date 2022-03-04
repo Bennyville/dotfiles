@@ -66,12 +66,15 @@ return require('packer').startup(function()
 	use { 'kkoomen/vim-doge',
 		run = ':call doge#install()'
 	}
+
+	-- syntax
+	use { 'sheerun/vim-polyglot' }
 	
 	-- elixir
-	use { 'elixir-editors/vim-elixir' }
+	-- use { 'elixir-editors/vim-elixir' }
 
 	-- xml
-	use { 'othree/xml.vim' }
+	-- use { 'othree/xml.vim' }
 	
 	-- mercurial
 	use { 'ludovicchabant/vim-lawrencium' }
