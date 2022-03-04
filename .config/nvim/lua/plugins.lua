@@ -3,7 +3,8 @@ return require('packer').startup(function()
 	use {'wbthomason/packer.nvim', opt = true}
 
 	-- Theme
-	use { 'crusoexia/vim-monokai' }
+	use { 'joshdick/onedark.vim' }
+	-- use { 'crusoexia/vim-monokai' }
 
 	-- LSP and completion
 	use { 'neovim/nvim-lspconfig' }
