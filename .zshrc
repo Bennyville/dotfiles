@@ -26,7 +26,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # User configuration
-for file in ~/.{path,exports,aliases,functions,extra}; do
+for file in ~/.{path,exports,aliases,functions,extra,fzf.zsh}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 
