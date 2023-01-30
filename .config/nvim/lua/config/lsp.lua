@@ -91,20 +91,19 @@ end
 lspconfig.html.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = {"html", "xhtml", "php", "eelixir"}
+	filetypes = {"html", "xhtml", "php", "eelixir", "heex"}
 }
 
 lspconfig.emmet_ls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
-	filetypes = {"html", "xhtml", "css", "php", "eelixir"}
+	filetypes = {"html", "xhtml", "css", "php", "eelixir", "heex"}
 }
 
 lspconfig.elixirls.setup{
 	capabilities = capabilities,
 	on_attach = on_attach,
 	cmd = {path_to_elixirls},
-	filetypes = { "elixir", "eelixir", "heex" },
 	settings = {
 		elixirLS = {
 			-- I also choose to turn off the auto dep fetching feature.
