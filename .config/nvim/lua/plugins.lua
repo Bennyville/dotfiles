@@ -50,6 +50,8 @@ return require('packer').startup(function()
 
 	-- file browser 
 	use { 'scrooloose/nerdtree' }
+	use { 'PhilRunninger/nerdtree-visual-selection' }
+	use { 'PhilRunninger/nerdtree-buffer-ops' }
 
 	-- dim inactive windows
 	use { 'blueyed/vim-diminactive' }
