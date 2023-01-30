@@ -60,6 +60,7 @@ return require('packer').startup(function()
 
 	-- movements/mapping for surrounding tokens
 	use { 'tpope/vim-surround' }
+	use { 'unblevable/quick-scope' }
 
 	-- code comments
 	use { 'tpope/vim-commentary' }
