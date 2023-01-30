@@ -82,4 +82,7 @@ return require('packer').startup(function()
 
 	-- session management
 	use { 'tpope/vim-obsession' }
+
+	-- Filetype icons
+	use { 'ryanoasis/vim-devicons' }
 end)
