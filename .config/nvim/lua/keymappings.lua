@@ -24,4 +24,6 @@ map('', '<Leader>ag', ':Ag <C-R><C-W><CR>', { noremap = true, silent = true })
 
 -- nerdtree
 map('', '<leader>n', ':NERDTreeFocus<CR>', { noremap = true, silent = true })
-
+map('', '<C-n>', ':NERDTree<CR>', { noremap = true, silent = true})
+map('', '<C-t>', ':NERDTreeToggle<CR>', { noremap = true, silent = true})
+map('', '<C-f>', ':NERDTreeFind<CR>', { noremap = true, silent = true})
