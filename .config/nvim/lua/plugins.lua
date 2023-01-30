@@ -71,10 +71,10 @@ return require('packer').startup(function()
 	}
 
 	-- syntax
-	use { 'sheerun/vim-polyglot' }
+	-- use { 'sheerun/vim-polyglot' }
 	
 	-- elixir
-	-- use { 'elixir-editors/vim-elixir' }
+	use { 'elixir-editors/vim-elixir' }
 
 	-- xml
 	-- use { 'othree/xml.vim' }
