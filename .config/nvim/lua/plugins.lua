@@ -15,30 +15,6 @@ return require('packer').startup(function()
 	use { 'hrsh7th/cmp-vsnip' }
 	use { 'hrsh7th/vim-vsnip' }
 
-	-- coc
-	-- use {
-	-- 	'neoclide/coc.nvim',
-	-- 	branch = 'release'
-	-- }
-
-	-- -- coc extensions
-	-- use {
-	-- 	'neoclide/coc-phpls',
-	-- 	run = 'yarn install --frozen-lockfile'
-	-- }
-	-- use {
-	-- 	'neoclide/coc-html',
-	-- 	run = 'yarn install --frozen-lockfile'
-	-- }
-	-- use {
-	-- 	'neoclide/coc-css',
-	-- 	run = 'yarn install --frozen-lockfile'
-	-- }
-	-- use {
-	-- 	'neoclide/coc-tsserver',
-	-- 	run = 'yarn install --frozen-lockfile'
-	-- }
-
 	-- treesitter
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -70,21 +46,28 @@ return require('packer').startup(function()
 		run = ':call doge#install()'
 	}
 
-	-- syntax
-	-- use { 'sheerun/vim-polyglot' }
-	
-	-- elixir
-	use { 'elixir-editors/vim-elixir' }
+	-- unit tests
+	use { 'vim-test/vim-test' }
 
-	-- xml
-	-- use { 'othree/xml.vim' }
+	-- pretty lists
+	use {
+		'folke/trouble.nvim',
+		requires = 'nvim-tree/nvim-web-devicons',
+		config = function()
+			require('trouble').setup {
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			}
+		end
+	}
 	
 	-- mercurial
 	use { 'ludovicchabant/vim-lawrencium' }
 
+	-- git
+	use { 'tpope/vim-fugitive' }
+
 	-- session management
 	use { 'tpope/vim-obsession' }
-
-	-- Filetype icons
-	use { 'ryanoasis/vim-devicons' }
 end)
