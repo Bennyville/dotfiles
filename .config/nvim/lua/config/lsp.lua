@@ -79,7 +79,7 @@ if not lspconfig.emmet_ls then
   }    
 end    
 
-local servers = {'cssls', 'tsserver', 'emmet_ls'}
+local servers = {'cssls', 'tsserver', 'emmet_ls', 'rust_analyzer'}
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
