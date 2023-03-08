@@ -19,6 +19,7 @@ brew install nvim
 brew install python
 brew install python3
 brew install koekeishiya/formulae/skhd
+brew install cmacrae/formulae/spacebar
 brew install tldr
 brew install tmux
 brew install wget
@@ -36,6 +37,7 @@ brew install firefox
 brew install google-chrome
 brew install monitorcontrol
 brew install phpstorm
+brew install setapp
 brew install slack
 brew install spotify
 
