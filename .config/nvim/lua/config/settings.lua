@@ -1,5 +1,6 @@
 vim.cmd 'syntax on';
 vim.cmd 'filetype plugin indent on';
+vim.cmd 'colorscheme onedark';
 
 -- hide unsaved buffers
 vim.o.hidden = true
@@ -47,3 +48,6 @@ vim.go.cmdheight = 2
 -- Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable delays and poor user experience.
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
+
+-- colors
+vim.o.termguicolors = true;
