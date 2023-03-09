@@ -142,10 +142,14 @@ alt + shift - 0 : yabai -m window --space  0; yabai -m space --focus 0
 
 # toggle window zoom
 # alt - d : yabai -m window --toggle zoom-parent
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - return : yabai -m window --toggle zoom-fullscreen
 
 # toggle window split type
 alt - e : yabai -m window --toggle split
+
+# layouts
+alt - s : yabai -m config layout stack
+alt - w : yabai -m config layout bsp
 
 # float / unfloat window and center on screen
 alt + shift - space : yabai -m window --toggle float --grid 4:4:1:1:2:2
