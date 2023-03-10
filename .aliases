@@ -1,17 +1,8 @@
 # Use sudo with aliases
 alias sudo="sudo "
 
-# Bin
-alias airport="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport"
-
-# General
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-alias batt="pmset -g batt | egrep \"([0-9]+\%).*\" -o --colour=auto | cut -f1 -d';'"
-alias ejectall="osascript -e 'tell application \"Finder\" to eject (every disk whose ejectable is true)'"
-alias kw="date '+%W'"
-alias restart="sudo shutdown -r now"
+# Shell
 alias rsh="exec $SHELL -l"
-alias turnoff="sudo shutdown -h now"
 
 # Network
 alias cleardns="sudo dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
@@ -21,9 +12,6 @@ alias lip="ipconfig getifaddr en0"
 alias lswifi="airport -s"
 alias pingtest="ping -c 5 google.de"
 
-# Weather
-alias weather="curl http://wttr.in/\?0q" # 0 = only current weather, q = quiet version (no "Weather report" text)
-
 # Mercurial
 alias hglg="hg log -G --pager always --color always --template '\033[0;31m{node|short} \033[0;34m{author|person} - \033[0;33m{tags} {bookmarks} {branches} \033[0m{desc|firstline|strip} \033[0;32m({date|age})\033[0m\n'"
 alias hgo="hg outgoing -G --pager always --color always --template '\033[0;31m{node|short} \033[0;34m{author|person} - \033[0;33m{tags} {bookmarks} {branches} \033[0m{desc|firstline|strip} \033[0;32m({date|age})\033[0m\n'"
@@ -32,24 +20,3 @@ alias hgrpy="hg log --pager always --no-merges -d 'yesterday' -u 'Benny Peckruhn
 alias hgslg="hg log -l 10 --color always --template '\033[0;33m{node|short} {branches} {tags} \033[0;34m{author|person} \033[0m{desc|firstline} \033[0;32m({date|age})\n'"
 alias hgdaily="hg log --color always -r \"date('-4') and author('Benny Peckruhn')\"  --template '\''\033[0;33m{node|short} {branches} {tags} \033[0;34m{author|person} \033[0m{desc|firstline} \033[0;32m({date|age})\n'"
 
-# Git
-alias ga="git add"
-alias gb="git checkout -b"
-alias gc="git commit -m"
-alias gci="git commit --interactive -m"
-alias gcl="git branch -d"
-alias gd="git diff"
-alias gl="git pull"
-alias glg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias gm="git merge"
-alias gp="git push"
-alias gs="git status"
-alias gu="git checkout"
-
-# Vagrant
-alias vh="vagrant halt"
-alias vp="vagrant provision"
-alias vr="vagrant reload"
-alias vs="vagrant ssh"
-alias vst="vagrant status"
-alias vu="vagrant up"
