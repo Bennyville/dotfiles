@@ -47,4 +47,8 @@ yabai -m config                                 \
     mouse_drop_action            swap           \
 	external_bar                 all:0:26
 
+yabai -m rule --add app="^System Settings$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^1Password$" sticky=on layer=above manage=off
+
 echo "yabai configuration loaded.."
