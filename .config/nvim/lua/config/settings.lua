@@ -51,3 +51,7 @@ vim.wo.signcolumn = 'yes'
 
 -- colors
 vim.o.termguicolors = true;
+
+-- netrw
+vim.g.netrw_keepdir = 0
+vim.g.netrw_winsize = 30

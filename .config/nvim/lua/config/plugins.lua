@@ -39,9 +39,9 @@ return require('packer').startup(function()
 	use { 'tjdevries/nlua.nvim' }
 
 	-- file browser 
-	use { 'scrooloose/nerdtree' }
-	use { 'PhilRunninger/nerdtree-visual-selection' }
-	use { 'PhilRunninger/nerdtree-buffer-ops' }
+	-- use { 'scrooloose/nerdtree' }
+	-- use { 'PhilRunninger/nerdtree-visual-selection' }
+	-- use { 'PhilRunninger/nerdtree-buffer-ops' }
 
 	-- dim inactive windows
 	use { 'blueyed/vim-diminactive' }
