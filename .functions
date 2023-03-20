@@ -13,5 +13,5 @@ wifi() {
 
 # Copy files and replace filename
 copyreplace() {
-	for file in $1; do echo cp "$file" "${file/$2/$3}";done
+	for file in $1; do cp "$file" "${file/$2/$3}";done
 }
