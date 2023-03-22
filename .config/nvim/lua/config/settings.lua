@@ -53,5 +53,5 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true;
 
 -- netrw
-vim.g.netrw_keepdir = 0
-vim.g.netrw_winsize = 30
+vim.g.netrw_winsize = 25
+vim.g.netrw_localrmdir='rm -r'
