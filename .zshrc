@@ -3,26 +3,14 @@
 # ZSH
 export ZSH=~/.oh-my-zsh
 
-plugins=(thefuck)
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
-SPACESHIP_PROMPT_ORDER=(
-	time
-	user
-	host
-	dir
-	git
-	hg
-	exec_time
-	line_sep
-	vi_mode
-	jobs
-	exit_code
-	char
-)
-
-ZSH_THEME="spaceship"
+ZSH_THEME=""
 
 source $ZSH/oh-my-zsh.sh
+
+autoload -U promptinit; promptinit
+prompt pure
 
 
 # User configuration

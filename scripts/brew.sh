@@ -26,6 +26,7 @@ brew install wget
 brew install zsh
 brew install zsh-completions
 brew install koekeishiya/formulae/yabai
+brew install pure
 
 # Application
 brew install 1password
