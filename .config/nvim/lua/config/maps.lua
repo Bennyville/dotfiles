@@ -21,5 +21,5 @@ map('', '<Leader>ag', ':Ag <C-R><C-W><CR>', { noremap = true, silent = true })
 -- map('', '<C-f>', ':NERDTreeFind<CR>', { noremap = true, silent = true})
 
 -- netrw
-map('', '<leader>dd', ':Lexplore %:p:h<CR>', { noremap = true, silent = true })
-map('', '<leader>da', ':Lexplore<CR>', { noremap = true, silent = true })
+map('', '<leader>dd', ':Explore %:p:h<CR>', { noremap = true, silent = true })
+map('', '<leader>da', ':Explore<CR>', { noremap = true, silent = true })
