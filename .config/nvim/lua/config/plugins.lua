@@ -3,7 +3,7 @@ return require('packer').startup(function()
 	use {'wbthomason/packer.nvim', opt = true}
 
 	-- Theme
-	use {'joshdick/onedark.vim'}
+	use { 'catppuccin/nvim', as = 'catppuccin' }
 
 	-- LSP and completion
 	use {

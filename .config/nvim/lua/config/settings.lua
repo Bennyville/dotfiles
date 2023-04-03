@@ -1,6 +1,6 @@
 vim.cmd 'syntax on';
 vim.cmd 'filetype plugin indent on';
-vim.cmd 'colorscheme onedark';
+vim.cmd.colorscheme 'catppuccin-mocha';
 
 -- hide unsaved buffers
 vim.o.hidden = true
