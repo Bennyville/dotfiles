@@ -10,9 +10,9 @@ map('', '<Leader><Esc>', ':set hlsearch!<CR>', { noremap = true, silent = true }
 map('', 'J', 'mzJ`z', { noremap = true, silent = true })
 
 -- fzf
-map('', '<C-p>', ':Files<CR>', { noremap = true, silent = true })
-map('', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
-map('', '<Leader>ag', ':Ag <C-R><C-W><CR>', { noremap = true, silent = true })
+map('n', '<C-p>', ':Files<CR>', { noremap = true, silent = true })
+map('n', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
+map('n', '<Leader>ag', ':Ag <C-R><C-W><CR>', { noremap = true, silent = true })
 
 -- netrw
 map('', '<leader>dd', ':Explore %:p:h<CR>', { noremap = true, silent = true })
