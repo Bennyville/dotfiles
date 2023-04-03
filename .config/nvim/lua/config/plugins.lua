@@ -39,11 +39,6 @@ return require('packer').startup(function()
 	-- Lua development
 	use { 'tjdevries/nlua.nvim' }
 
-	-- file browser 
-	-- use { 'scrooloose/nerdtree' }
-	-- use { 'PhilRunninger/nerdtree-visual-selection' }
-	-- use { 'PhilRunninger/nerdtree-buffer-ops' }
-
 	-- fuzzy search 
 	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 	use { 'junegunn/fzf.vim' }
