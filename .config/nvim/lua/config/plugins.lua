@@ -44,9 +44,6 @@ return require('packer').startup(function()
 	-- use { 'PhilRunninger/nerdtree-visual-selection' }
 	-- use { 'PhilRunninger/nerdtree-buffer-ops' }
 
-	-- dim inactive windows
-	use { 'blueyed/vim-diminactive' }
-
 	-- fuzzy search 
 	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
 	use { 'junegunn/fzf.vim' }
@@ -76,7 +73,7 @@ return require('packer').startup(function()
 			}
 		end
 	}
-	
+
 	-- mercurial
 	use { 'ludovicchabant/vim-lawrencium' }
 
