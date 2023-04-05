@@ -52,6 +52,9 @@ vim.wo.signcolumn = 'yes'
 -- colors
 vim.o.termguicolors = true
 
+-- visible lines when scroll
+vim.o.scrolloff = 8
+
 -- netrw
 vim.g.netrw_winsize = 25
 vim.g.netrw_localrmdir='rm -r'
