@@ -50,7 +50,7 @@ vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
 -- colors
-vim.o.termguicolors = true;
+vim.o.termguicolors = true
 
 -- netrw
 vim.g.netrw_winsize = 25
