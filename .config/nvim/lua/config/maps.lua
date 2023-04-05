@@ -1,19 +1,18 @@
 -- map leader key to ,
 vim.g.mapleader = ' '
 
-local map = vim.api.nvim_set_keymap
-
 -- remove search highlights
-map('', '<Leader><Esc>', ':set hlsearch!<CR>', { noremap = true, silent = true })
+vim.keymap.set('', '<Leader><Esc>', ':set hlsearch!<CR>')
 
 -- keep cursor position after joining lines
-map('', 'J', 'mzJ`z', { noremap = true, silent = true })
+vim.keymap.set('', 'J', 'mzJ`z')
 
 -- fzf
-map('n', '<C-p>', ':Files<CR>', { noremap = true, silent = true })
-map('n', '<C-b>', ':Buffers<CR>', { noremap = true, silent = true })
-map('n', '<Leader>ag', ':Ag <C-R><C-W><CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-p>', ':Files<CR>')
+vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
+vim.keymap.set('n', '<Leader>ag', ':Ag <C-R><C-W><CR>')
 
 -- netrw
-map('', '<leader>dd', ':Explore %:p:h<CR>', { noremap = true, silent = true })
-map('', '<leader>da', ':Explore<CR>', { noremap = true, silent = true })
+vim.keymap.set('', '<leader>dd', ':Explore %:p:h<CR>')
+vim.keymap.set('', '<leader>da', ':Explore<CR>')
+
