@@ -31,7 +31,6 @@ vim.o.incsearch = true
 vim.o.laststatus = 2
 
 -- show whitespace
-vim.o.list = true
 vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·"
 
 -- disable backup and swap files
