@@ -9,12 +9,7 @@ plugins=(git docker kubectl helm mix ripgrep rust)
 
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
-
 source $ZSH/oh-my-zsh.sh
-
-autoload -U promptinit; promptinit
-prompt pure
-
 
 # User configuration
 for file in ~/.{path,exports,aliases,functions,extra,fzf.zsh}; do
