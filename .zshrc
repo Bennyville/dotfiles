@@ -3,9 +3,10 @@
 # ZSH
 export ZSH=~/.oh-my-zsh
 
+ZSH_THEME="robbyrussell"
+
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
-ZSH_THEME=""
 
 source $ZSH/oh-my-zsh.sh
 
