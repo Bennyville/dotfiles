@@ -18,3 +18,6 @@ vim.keymap.set('', '<leader>da', ':Explore<CR>')
 
 vim.keymap.set({'v', 'x', 'n'}, '<leader>y', '"+y')
 
+vim.keymap.set('n', '<leader>cp', ':let @+=expand("%")<CR>')
+vim.keymap.set('n', '<leader>cP', ':let @+=expand("%:p")<CR>')
+vim.keymap.set('n', '<leader>cf', ':let @+=expand("%:t")<CR>')
