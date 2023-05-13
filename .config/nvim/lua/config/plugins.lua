@@ -40,8 +40,13 @@ return require('packer').startup(function()
 	use { 'tjdevries/nlua.nvim' }
 
 	-- fuzzy search 
-	use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
-	use { 'junegunn/fzf.vim' }
+	-- use { 'junegunn/fzf', dir = '~/.fzf', run = './install --all' }
+	-- use { 'junegunn/fzf.vim' }
+	use {
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		-- or                            , branch = '0.1.x',
+		requires = { {'nvim-lua/plenary.nvim'} }
+	}
 
 	-- movements/mapping for surrounding tokens
 	use { 'tpope/vim-surround' }

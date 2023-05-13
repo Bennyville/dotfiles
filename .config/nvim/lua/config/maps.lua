@@ -8,9 +8,9 @@ vim.keymap.set('', '<Leader><Esc>', ':set hlsearch!<CR>')
 vim.keymap.set('', 'J', 'mzJ`z')
 
 -- fzf
-vim.keymap.set('n', '<C-p>', ':Files<CR>')
-vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
-vim.keymap.set('n', '<Leader>ag', ':Ag <C-R><C-W><CR>')
+-- vim.keymap.set('n', '<C-p>', ':Files<CR>')
+-- vim.keymap.set('n', '<C-b>', ':Buffers<CR>')
+-- vim.keymap.set('n', '<Leader>ag', ':Ag <C-R><C-W><CR>')
 
 -- netrw
 vim.keymap.set('', '<leader>dd', ':Explore %:p:h<CR>')
