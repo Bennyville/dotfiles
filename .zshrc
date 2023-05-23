@@ -1,4 +1,3 @@
-
 #!/usr/bin/env zsh
 # ZSH
 export ZSH=~/.oh-my-zsh
@@ -25,3 +24,5 @@ while [ -h "$SOURCE" ]; do
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
