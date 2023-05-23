@@ -3,7 +3,8 @@ return require('packer').startup(function()
 	use {'wbthomason/packer.nvim', opt = true}
 
 	-- Theme
-	use { 'catppuccin/nvim', as = 'catppuccin' }
+	-- use { 'catppuccin/nvim', as = 'catppuccin' }
+	use { 'tanvirtin/monokai.nvim' }
 
 	-- LSP and completion
 	use {

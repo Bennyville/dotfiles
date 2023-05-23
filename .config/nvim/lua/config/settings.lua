@@ -1,6 +1,6 @@
 vim.cmd 'syntax on';
 vim.cmd 'filetype plugin indent on';
-vim.cmd.colorscheme 'catppuccin-mocha';
+vim.cmd.colorscheme 'monokai_pro';
 
 -- hide unsaved buffers
 vim.o.hidden = true
