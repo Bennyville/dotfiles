@@ -53,5 +53,7 @@ yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Home$" sticky=on layer=above manage=off
 yabai -m rule --add app="^System Settings$" sticky=on manage=off
 yabai -m rule --add app="^Spotify$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Outlook$" sticky=on layer=above manage=off
+yabai -m rule --add app="^TortoiseHG$" sticky=on layer=above manage=off
 
 echo "yabai configuration loaded.."
