@@ -49,7 +49,12 @@ return require('packer').startup(function()
 		}
 	}
 
+	-- jump to marked files
 	use {
+		'ThePrimeagen/harpoon',
+		requires = {
+			{'nvim-lua/plenary.nvim'}
+		}
 	}
 
 	-- movements/mapping for surrounding tokens
