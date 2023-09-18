@@ -1,5 +1,5 @@
 # ensure dotfiles bin directory is loaded first
 export PATH=$HOME/.bin:$HOME/.composer/vendor/bin:$PATH
-export PATH=/usr/local/opt/mozjpeg/bin:$PATH
+export PATH=/usr/local/opt/mozjpeg/bin:$HOME/.cargo/bin:$PATH
 
 export -U PATH
