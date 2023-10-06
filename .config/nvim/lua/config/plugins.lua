@@ -46,6 +46,8 @@ return require('packer').startup(function()
 		"rcarriga/nvim-dap-ui",
 		requires = { "mfussenegger/nvim-dap" }
 	}
+
+	-- fuzzy search
 	use { 'ibhagwan/fzf-lua',
 		-- optional for icon support
 		requires = {
