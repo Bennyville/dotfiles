@@ -2,11 +2,12 @@
 
 vpn="$(scutil --nc list | awk -F'"' '/"([^"]*)/{print $2}' | fzf)"
 
-is_connected=$(networksetup -showpppoestatus "${vpn}" | grep -qv "^connected$")
+networksetup -showpppoestatus "${vpn}" | grep -q "^connected$"
+is_connected=$?
 
-if ! $is_connected; then
-	err "Already connected to '${vpn}'"
-	exit 1
+if [ $is_connected -eq 0 ]; then
+	scutil --nc stop "${vpn}"
+	exit 0
 fi
 
 password="$(security find-generic-password -s "${vpn}" -w)"
