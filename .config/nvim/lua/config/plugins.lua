@@ -104,4 +104,7 @@ return require('packer').startup(function()
 
 	-- elixir tools
 	use { "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" } }
+
+	-- copilot
+	use { 'github/copilot.vim' }
 end)
