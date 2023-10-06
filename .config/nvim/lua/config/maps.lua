@@ -23,3 +23,8 @@ vim.keymap.set('n', '<leader>cP', ':let @+=expand("%:p")<CR>')
 vim.keymap.set('n', '<leader>cf', ':let @+=expand("%:t")<CR>')
 
 vim.keymap.set('n', '<leader>cr', ':Whereami<CR>')
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
