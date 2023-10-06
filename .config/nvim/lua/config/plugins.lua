@@ -94,4 +94,7 @@ return require('packer').startup(function()
 
 	-- whereami
 	use { '~/Code/private/nvim-whereami' }
+
+	-- elixir tools
+	use { "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" } }
 end)
