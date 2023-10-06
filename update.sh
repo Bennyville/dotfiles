@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Check if github.com is reachable
-curl -I -L "http://github.com" --connect-timeout 1 --silent > /dev/null
+curl -I -L "https://github.com" --connect-timeout 1 --silent > /dev/null
 [[ $? -eq 7 ]] && echo "Can't reach github.com. Proxy needed?" && exit
 
 echo '### Pull latest changes ###'
