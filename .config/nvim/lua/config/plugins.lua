@@ -91,4 +91,7 @@ return require('packer').startup(function()
 
 	-- session management
 	use { 'tpope/vim-obsession' }
+
+	-- whereami
+	use { '~/Code/private/nvim-whereami' }
 end)
