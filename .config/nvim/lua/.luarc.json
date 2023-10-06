@@ -3,5 +3,12 @@
     "Lua.diagnostics.globals": [
         "vim",
         "use"
+    ],
+    "workspace.library": [
+        "/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime/lua",
+        "/opt/homebrew/Cellar/neovim/0.9.0/share/nvim/runtime/lua/vim/lsp",
+        "/Users/bpeckruhn/.config/nvim/lua",
+        "/Users/bpeckruhn/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/4d169169",
+        "/Users/bpeckruhn/.local/share/nvim/mason/packages/lua-language-server/libexec/meta/770f8046"
     ]
 }
