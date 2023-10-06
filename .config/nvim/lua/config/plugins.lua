@@ -36,6 +36,7 @@ return require('packer').startup(function()
 		run = ':TSUpdate'
 	}
 	use { 'nvim-treesitter/nvim-treesitter-context' }
+	use { 'nvim-treesitter/playground' }
 
 	-- Lua development
 	use { 'tjdevries/nlua.nvim' }
