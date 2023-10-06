@@ -40,7 +40,11 @@ return require('packer').startup(function()
 	-- Lua development
 	use { 'tjdevries/nlua.nvim' }
 
-	-- fuzzy search 
+	-- Debugging
+	use {
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" }
+	}
 	use { 'ibhagwan/fzf-lua',
 		-- optional for icon support
 		requires = {
