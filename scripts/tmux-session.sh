@@ -12,7 +12,7 @@ if [[ -z $selected ]]; then
     exit 0
 fi
 
-selected_name=$(basename "$selected" | tr . _)
+selected_name=$(echo "$selected" | rev | cut -d'/' -f 1,2 | rev | sed 's#^~\/##' | tr './' '_-')
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
