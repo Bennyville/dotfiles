@@ -96,8 +96,8 @@ return require('packer').startup(function()
 	-- git
 	use { 'tpope/vim-fugitive' }
 
-	-- session management
-	use { 'tpope/vim-obsession' }
+	-- time tracking
+	use { 'wakatime/vim-wakatime' }
 
 	-- whereami
 	use { '~/Code/private/nvim-whereami' }
