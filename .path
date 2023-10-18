@@ -1,5 +1,8 @@
 # ensure dotfiles bin directory is loaded first
 export PATH=$HOME/.bin:$HOME/.composer/vendor/bin:$PATH
 export PATH=/usr/local/opt/mozjpeg/bin:$HOME/.cargo/bin:$PATH
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+# export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+# export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
 export -U PATH
