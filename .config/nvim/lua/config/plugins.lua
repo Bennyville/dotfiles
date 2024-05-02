@@ -2,6 +2,7 @@ require('lazy').setup({
 	-- Theme
 	{ 'catppuccin/nvim', as = 'catppuccin' },
 	{ 'tanvirtin/monokai.nvim' },
+	{ 'ellisonleao/gruvbox.nvim' },
 
 	-- LSP and completion
 	{
