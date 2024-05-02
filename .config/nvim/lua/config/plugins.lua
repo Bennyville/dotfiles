@@ -1,16 +1,13 @@
-return require('packer').startup(function()
-	-- Packer can manage itself as an optional plugin
-	use { 'wbthomason/packer.nvim', opt = true }
-
+require('lazy').setup({
 	-- Theme
-	-- use { 'catppuccin/nvim', as = 'catppuccin' }
-	use { 'tanvirtin/monokai.nvim' }
+	{ 'catppuccin/nvim', as = 'catppuccin' },
+	{ 'tanvirtin/monokai.nvim' },
 
 	-- LSP and completion
-	use {
+	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
-		requires = {
+		dependencies = {
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' },    -- Required
 			{ 'williamboman/mason.nvim' },  -- Optional
@@ -28,83 +25,100 @@ return require('packer').startup(function()
 			{ 'L3MON4D3/LuaSnip' },    -- Required
 			{ 'rafamadriz/friendly-snippets' }, -- Optional
 		}
-	}
+	},
 
 	-- treesitter
-	use {
+	{
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
-	use { 'nvim-treesitter/nvim-treesitter-context' }
-	use { 'nvim-treesitter/playground' }
+		build = ':TSUpdate'
+	},
+	{ 'nvim-treesitter/nvim-treesitter-context' },
+	{ 'nvim-treesitter/playground' },
 
 	-- Lua development
-	use { 'tjdevries/nlua.nvim' }
+	{ 'tjdevries/nlua.nvim' },
 
 	-- Debugging
-	use {
+	{
 		"rcarriga/nvim-dap-ui",
-		requires = { "mfussenegger/nvim-dap" }
-	}
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio"
+		}
+	},
+
 
 	-- fuzzy search
-	use { 'ibhagwan/fzf-lua',
+	{ 'ibhagwan/fzf-lua',
 		-- optional for icon support
-		requires = {
-			{ 'junegunn/fzf', run = './install --bin' },
+		dependencies = {
+			{ 'junegunn/fzf', build = './install --bin' },
 			{ 'nvim-tree/nvim-web-devicons' }
 		}
-	}
+	},
 
 	-- jump to marked files
-	use {
+	{
 		'ThePrimeagen/harpoon',
-		requires = {
+		dependencies = {
 			{ 'nvim-lua/plenary.nvim' }
 		}
-	}
+	},
 
 	-- movements/mapping for surrounding tokens
-	use { 'tpope/vim-surround' }
-	use { 'unblevable/quick-scope' }
+	{ 'tpope/vim-surround' },
+	{ 'unblevable/quick-scope' },
 
 	-- code comments
-	use { 'tpope/vim-commentary' }
-	use { 'kkoomen/vim-doge',
-		run = ':call doge#install()'
-	}
+	{ 'tpope/vim-commentary' },
+	{ 'kkoomen/vim-doge',
+		build = 'call doge#install()'
+	},
 
 	-- unit tests
-	use { 'vim-test/vim-test' }
+	{ 'vim-test/vim-test' },
 
 	-- pretty lists
-	use {
+	{
 		'folke/trouble.nvim',
-		requires = 'nvim-tree/nvim-web-devicons',
+		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = function()
 			require('trouble').setup {
 				-- your configuration comes here
-				-- or leave it empty to use the default settings
+				-- or leave it empty to the default settings
 				-- refer to the configuration section below
 			}
 		end
-	}
+	},
 
 	-- mercurial
-	use { 'ludovicchabant/vim-lawrencium' }
+	{ 'ludovicchabant/vim-lawrencium' },
 
 	-- git
-	use { 'tpope/vim-fugitive' }
+	{ 'tpope/vim-fugitive' },
 
 	-- time tracking
-	use { 'wakatime/vim-wakatime' }
+	{ 'wakatime/vim-wakatime' },
 
 	-- whereami
-	use { '~/Code/private/nvim-whereami' }
+	{ '~/Code/private/nvim-whereami', dev = true},
+	-- { 'bennyville/nvim-whereami' }
 
 	-- elixir tools
-	use { "elixir-tools/elixir-tools.nvim", tag = "stable", requires = { "nvim-lua/plenary.nvim" } }
+	-- { "elixir-tools/elixir-tools.nvim", tag = "stable", dependencies = { "nvim-lua/plenary.nvim" } }
+
+	-- neovim development
+	{ 'folke/neodev.nvim' },
 
 	-- copilot
-	use { 'github/copilot.vim' }
-end)
+	{ 'github/copilot.vim' },
+
+	--obsidian
+	({
+		"epwalsh/obsidian.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	}),
+
+	-- smarty syntax highlighting
+	{ 'blueyed/smarty.vim' },
+})
