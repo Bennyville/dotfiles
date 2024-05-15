@@ -1,8 +1,15 @@
 require('lazy').setup({
 	-- Theme
-	{ 'catppuccin/nvim', as = 'catppuccin' },
-	{ 'tanvirtin/monokai.nvim' },
-	{ 'ellisonleao/gruvbox.nvim' },
+	-- { 'catppuccin/nvim', as = 'catppuccin' },
+	-- { 'tanvirtin/monokai.nvim' },
+	{ 
+		'ellisonleao/gruvbox.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme gruvbox]])
+		end,
+	},
 
 	-- LSP and completion
 	{
