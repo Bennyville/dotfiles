@@ -4,4 +4,4 @@ vim.keymap.set('v', '<leader>fG', '<cmd>lua require(\'fzf-lua\').grep_visual()<c
 vim.keymap.set('n', '<leader>ff', '<cmd>lua require(\'fzf-lua\').files()<cr>', {})
 vim.keymap.set('n', '<leader>fd', '<cmd>lua require(\'fzf-lua\').buffers()<cr>', {})
 vim.keymap.set('n', '<leader>fs', '<cmd>lua require(\'fzf-lua\').git_files()<cr>', {})
-vim.keymap.set('n', '<leader>fa', '<cmd>lua require(\'fzf-lua\').help_tags()<cr>', {})
+vim.keymap.set('n', '<leader>fa', '<cmd>lua require(\'fzf-lua\').builtin()<cr>', {})
