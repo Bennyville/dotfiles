@@ -17,6 +17,7 @@ vim.keymap.set('', '<leader>dd', ':Explore %:p:h<CR>')
 vim.keymap.set('', '<leader>da', ':Explore<CR>')
 
 vim.keymap.set({'v', 'x', 'n'}, '<leader>y', '"+y')
+vim.keymap.set({'v', 'n'}, '<leader>p', '"_dP')
 
 vim.keymap.set('n', '<leader>cp', ':let @+=expand("%")<CR>')
 vim.keymap.set('n', '<leader>cP', ':let @+=expand("%:p")<CR>')
