@@ -89,7 +89,7 @@ require('lazy').setup({
 	{ 'wakatime/vim-wakatime' },
 
 	-- whereami
-	{ '~/Code/private/nvim-whereami', dev = true},
+	{ dir = '~/Code/private/nvim-whereami' },
 	-- { 'bennyville/nvim-whereami' }
 
 	-- elixir tools
