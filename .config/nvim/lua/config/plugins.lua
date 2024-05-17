@@ -43,19 +43,6 @@ require('lazy').setup({
 	{ 'nvim-treesitter/nvim-treesitter-context' },
 	{ 'nvim-treesitter/playground' },
 
-	-- Lua development
-	{ 'tjdevries/nlua.nvim' },
-
-	-- Debugging
-	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = {
-			"mfussenegger/nvim-dap",
-			"nvim-neotest/nvim-nio"
-		}
-	},
-
-
 	-- fuzzy search
 	{ 'ibhagwan/fzf-lua',
 		-- optional for icon support
@@ -75,16 +62,9 @@ require('lazy').setup({
 
 	-- movements/mapping for surrounding tokens
 	{ 'tpope/vim-surround' },
-	{ 'unblevable/quick-scope' },
 
 	-- code comments
 	{ 'tpope/vim-commentary' },
-	{ 'kkoomen/vim-doge',
-		build = 'call doge#install()'
-	},
-
-	-- unit tests
-	{ 'vim-test/vim-test' },
 
 	-- pretty lists
 	{
@@ -115,9 +95,6 @@ require('lazy').setup({
 	-- elixir tools
 	-- { "elixir-tools/elixir-tools.nvim", tag = "stable", dependencies = { "nvim-lua/plenary.nvim" } }
 
-	-- neovim development
-	{ 'folke/neodev.nvim' },
-
 	-- copilot
 	{ 'github/copilot.vim' },
 
@@ -126,7 +103,4 @@ require('lazy').setup({
 		"epwalsh/obsidian.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	}),
-
-	-- smarty syntax highlighting
-	{ 'blueyed/smarty.vim' },
 })
