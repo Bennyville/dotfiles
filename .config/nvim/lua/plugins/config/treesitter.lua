@@ -1,4 +1,4 @@
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
 	ensure_installed = {
 		"bash",
 		"css",
@@ -31,6 +31,7 @@ require'nvim-treesitter.configs'.setup {
 	indent = {
 		enable = true
 	}
-}
+})
 
 vim.api.nvim_set_hl(0, 'TreesitterContextBottom', { underline = true })
+

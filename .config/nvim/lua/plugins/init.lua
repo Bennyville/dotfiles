@@ -1,17 +1,15 @@
-require('lazy').setup({
-	-- Theme
-	-- { 'catppuccin/nvim', as = 'catppuccin' },
-	-- { 'tanvirtin/monokai.nvim' },
-	{ 
+return {
+	-- colorscheme
+	{
 		'ellisonleao/gruvbox.nvim',
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme gruvbox]])
+			require('plugins.config.colorscheme')
 		end,
 	},
 
-	-- LSP and completion
+	-- lsp/completion/snippets
 	{
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
@@ -32,33 +30,35 @@ require('lazy').setup({
 			-- Snippets
 			{ 'L3MON4D3/LuaSnip' },    -- Required
 			{ 'rafamadriz/friendly-snippets' }, -- Optional
-		}
+		},
+		config = function()
+			require('plugins.config.lsp')
+		end
+
 	},
 
 	-- treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
-		lazy = false
+		lazy = false,
+		config = function()
+			require('plugins.config.treesitter')
+		end
 	},
 	{ 'nvim-treesitter/nvim-treesitter-context' },
 	{ 'nvim-treesitter/playground' },
 
 	-- fuzzy search
-	{ 'ibhagwan/fzf-lua',
-		-- optional for icon support
+	{
+		'ibhagwan/fzf-lua',
 		dependencies = {
 			{ 'junegunn/fzf', build = './install --bin' },
-			{ 'nvim-tree/nvim-web-devicons' }
-		}
-	},
-
-	-- jump to marked files
-	{
-		'ThePrimeagen/harpoon',
-		dependencies = {
-			{ 'nvim-lua/plenary.nvim' }
-		}
+			{ 'nvim-tree/nvim-web-devicons' } -- optional for icon support
+		},
+		config = function()
+			require('plugins.config.fzf-lua')
+		end
 	},
 
 	-- movements/mapping for surrounding tokens
@@ -72,11 +72,7 @@ require('lazy').setup({
 		'folke/trouble.nvim',
 		dependencies = 'nvim-tree/nvim-web-devicons',
 		config = function()
-			require('trouble').setup {
-				-- your configuration comes here
-				-- or leave it empty to the default settings
-				-- refer to the configuration section below
-			}
+			require('plugins.config.trouble')
 		end
 	},
 
@@ -84,24 +80,34 @@ require('lazy').setup({
 	{ 'ludovicchabant/vim-lawrencium' },
 
 	-- git
-	{ 'tpope/vim-fugitive' },
+	{ 
+		'tpope/vim-fugitive',
+		config = function()
+			require('plugins.config.fugitive')
+		end
+	},
 
 	-- time tracking
 	{ 'wakatime/vim-wakatime' },
 
-	-- whereami
+	-- whereami/copy reference
 	{ dir = '~/Code/private/nvim-whereami' },
 	-- { 'bennyville/nvim-whereami' }
 
-	-- elixir tools
-	-- { "elixir-tools/elixir-tools.nvim", tag = "stable", dependencies = { "nvim-lua/plenary.nvim" } }
-
 	-- copilot
-	{ 'github/copilot.vim' },
+	{ 
+		'github/copilot.vim',
+		config = function()
+			require('plugins.config.copilot')
+		end
+	},
 
 	--obsidian
-	({
+	{
 		"epwalsh/obsidian.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
-	}),
-})
+		config = function()
+			require('plugins.config.obsidian')
+		end
+	}
+}
