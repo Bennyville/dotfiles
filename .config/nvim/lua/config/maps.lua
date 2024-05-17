@@ -2,7 +2,7 @@
 vim.g.mapleader = ' '
 
 -- remove search highlights
-vim.keymap.set('', '<Leader><Esc>', ':set hlsearch!<CR>')
+vim.keymap.set('', '<Leader><Esc>', ':noh<CR>')
 
 -- keep cursor position after joining lines
 vim.keymap.set('', 'J', 'mzJ`z')
