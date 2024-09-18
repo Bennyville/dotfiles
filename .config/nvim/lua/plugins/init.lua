@@ -33,6 +33,8 @@ return {
 		},
 		config = function()
 			require('plugins.config.lsp')
+			require('luasnip.loaders.from_vscode').lazy_load()
+			require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})
 		end
 
 	},
