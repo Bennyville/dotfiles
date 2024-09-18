@@ -37,6 +37,10 @@ end)
 
 lsp.setup()
 
+require('lspconfig').emmet_ls.setup({
+  filetypes = { "html", "css", "elixir", "eelixir", "heex" },
+})
+
 vim.cmd 'autocmd FileType php setlocal iskeyword+=$'
 vim.cmd 'autocmd FileType javascript setlocal iskeyword+=$'
 
