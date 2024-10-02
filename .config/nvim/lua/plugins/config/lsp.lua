@@ -125,6 +125,13 @@ require('mason-lspconfig').setup_handlers({
 			filetypes = { 'css', 'scss', 'less' },
 		})
 	end,
+	['html'] = function()
+		lspconfig.html.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { 'html', 'heex' },
+		})
+	end,
 })
 
 -- Adjust 'iskeyword' setting for specific file types.
