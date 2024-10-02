@@ -1,4 +1,12 @@
 #!/usr/bin/env zsh
+#
+# add VPN credentials to keychain
+# security add-generic-password \
+#  -D "VPN-Orion" \
+#  -s "myVPN" \
+#  -a "myUserAccount@myVPN" \
+#  -w "mySuperStrongPassword" \
+#  -T "/usr/bin/security"
 
 vpn="$(scutil --nc list | awk -F'"' '/"([^"]*)/{print $2}' | fzf)"
 
