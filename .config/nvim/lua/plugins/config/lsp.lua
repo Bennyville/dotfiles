@@ -1,47 +1,136 @@
-local lsp = require('lsp-zero').preset('recommended')
+-- Set up Mason
+require('mason').setup()
 
--- (Optional) Configure lua language server for neovim
-lsp.nvim_workspace()
+-- Set up Mason LSPconfig
+require('mason-lspconfig').setup({
+	ensure_installed = {
+		'lua_ls',
+		'emmet_ls',
+		'html',
+		'rust_analyzer',
+		'cssls',
+		'intelephense',
+		'ts_ls',
+	},
+	automatic_installation = true,
+})
 
+-- Set up nvim-cmp.
 local cmp = require('cmp')
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({ select = true }),
-	['<C-Space>'] = cmp.mapping.complete(),
+local luasnip = require('luasnip')
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			-- Use `luasnip` for snippet expansion.
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	mapping = {
+		['<C-p>']     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+		['<C-n>']     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+		['<C-y>']     = cmp.mapping.confirm({ select = true }),
+		['<C-Space>'] = cmp.mapping.complete(),
+		-- Disable default '<Tab>' and '<S-Tab>' mappings
+		['<Tab>']     = nil,
+		['<S-Tab>']   = nil,
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' }, -- Add luasnip as a source
+		-- Add additional sources if needed
+	}),
 })
 
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
+-- Set up lspconfig.
+local lspconfig = require('lspconfig')
 
-lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
-})
+-- Enable LSP capabilities.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lsp.on_attach(function(client, bufnr)
+-- Common on_attach function to map keys after the language server attaches to the current buffer.
+local on_attach = function(client, bufnr)
 	local opts = { buffer = bufnr, remap = false }
 
 	vim.keymap.set('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 	vim.keymap.set('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-	vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-	vim.keymap.set('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-	vim.keymap.set('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-	vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-	vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	vim.keymap.set('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-	vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-	vim.keymap.set('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-	vim.keymap.set('n', '<leader>f', '<cmd>lua vim.lsp.buf.format()<CR>', opts)
-end)
+	vim.keymap.set('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+	vim.keymap.set('n', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+	vim.keymap.set('n', '<leader>rn', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
+	vim.keymap.set('n', '<leader>ca', '<Cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+	vim.keymap.set('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+	vim.keymap.set('n', '<leader>e', '<Cmd>lua vim.diagnostic.open_float()<CR>', opts)
+	vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+	vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+	vim.keymap.set('n', '<leader>f', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
+end
 
-lsp.setup()
-
-require('lspconfig').emmet_ls.setup({
-  filetypes = { "html", "css", "elixir", "eelixir", "heex" },
+-- Use mason-lspconfig to setup language servers
+require('mason-lspconfig').setup_handlers({
+	-- Default handler (optional)
+	function(server_name)
+		lspconfig[server_name].setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+		})
+	end,
+	-- Specific configurations for certain servers
+	['lua_ls'] = function()
+		lspconfig.lua_ls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					runtime = {
+						version = 'LuaJIT',
+					},
+					diagnostics = {
+						globals = { 'vim' },
+					},
+					workspace = {
+						library = vim.api.nvim_get_runtime_file("", true),
+						checkThirdParty = false,
+					},
+					telemetry = {
+						enable = false,
+					},
+				},
+			},
+		})
+	end,
+	['rust_analyzer'] = function()
+		lspconfig.rust_analyzer.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				['rust-analyzer'] = {
+					checkOnSave = {
+						command = 'clippy',
+					},
+				},
+			},
+		})
+	end,
+	['emmet_ls'] = function()
+		lspconfig.emmet_ls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { 'html', 'css', 'elixir', 'eelixir', 'heex' },
+		})
+	end,
+	['cssls'] = function()
+		lspconfig.cssls.setup({
+			on_attach = on_attach,
+			capabilities = capabilities,
+			filetypes = { 'css', 'scss', 'less' },
+		})
+	end,
 })
 
+-- Adjust 'iskeyword' setting for specific file types.
 vim.cmd 'autocmd FileType php setlocal iskeyword+=$'
 vim.cmd 'autocmd FileType javascript setlocal iskeyword+=$'
 
--- vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format()'
+-- Optional: Automatically format on save.
+-- vim.cmd 'autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })'
+

@@ -11,7 +11,7 @@ fpath+=("$(brew --prefix)/share/zsh/site-functions")
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-for file in ~/.{path,exports,aliases,functions,extra,fzf.zsh}; do
+for file in ~/.{path,exports,aliases,functions,extra}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file";
 done;
 
@@ -25,4 +25,4 @@ while [ -h "$SOURCE" ]; do
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE"
 done
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
