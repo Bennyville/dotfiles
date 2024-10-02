@@ -18,15 +18,13 @@ brew install node
 brew install nvim
 brew install python
 brew install python3
-brew install koekeishiya/formulae/skhd
 brew install cmacrae/formulae/spacebar
 brew install tldr
 brew install tmux
 brew install wget
 brew install zsh
 brew install zsh-completions
-brew install koekeishiya/formulae/yabai
-brew install pure
+brew install ripgrep
 
 # Application
 brew install 1password
