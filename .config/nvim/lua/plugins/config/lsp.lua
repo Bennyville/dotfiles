@@ -28,12 +28,12 @@ cmp.setup({
 	},
 	mapping = {
 		['<C-p>']     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+		['<S-Tab>']     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 		['<C-n>']     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+		['<Tab>']     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+		['<CR>']     = cmp.mapping.confirm({ select = true }),
 		['<C-y>']     = cmp.mapping.confirm({ select = true }),
 		['<C-Space>'] = cmp.mapping.complete(),
-		-- Disable default '<Tab>' and '<S-Tab>' mappings
-		['<Tab>']     = nil,
-		['<S-Tab>']   = nil,
 	},
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
