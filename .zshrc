@@ -4,7 +4,7 @@ export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git docker kubectl helm mix ripgrep rust)
+plugins=(git docker kubectl helm mix rust)
 
 fpath+=("$(brew --prefix)/share/zsh/site-functions")
 
