@@ -109,5 +109,12 @@ return {
 		config = function()
 			require('plugins.config.obsidian')
 		end
+	},
+
+	{
+		"danymat/neogen",
+		config = function ()
+			require('plugins.config.neogen')
+		end
 	}
 }
