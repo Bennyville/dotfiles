@@ -29,3 +29,8 @@
 	prompt = false
 [commit]
     verbose = true
+[alias]
+	ci = commit
+	co = checkout
+	st = status
+
