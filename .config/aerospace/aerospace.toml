@@ -20,10 +20,10 @@ end tell'
 '''
 
 # i3 wraps focus by default
-alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
-alt-k =         'focus --boundaries-action wrap-around-the-workspace down'
-alt-l =         'focus --boundaries-action wrap-around-the-workspace up'
-alt-semicolon = 'focus --boundaries-action wrap-around-the-workspace right'
+alt-h =         'focus --boundaries-action wrap-around-the-workspace left'
+alt-j =         'focus --boundaries-action wrap-around-the-workspace down'
+alt-k =         'focus --boundaries-action wrap-around-the-workspace up'
+alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
 
 alt-shift-j = 'move left'
 alt-shift-k = 'move down'
@@ -31,7 +31,7 @@ alt-shift-l = 'move up'
 alt-shift-semicolon = 'move right'
 
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-alt-h = 'split horizontal'
+alt-z = 'split horizontal'
 alt-v = 'split vertical'
 
 alt-f = 'fullscreen'
