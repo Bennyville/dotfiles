@@ -1,6 +1,5 @@
 [user]
 	name = Benny Peckruhn
-	email = benny@bennyville.de
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
@@ -31,6 +30,9 @@
     verbose = true
 [alias]
 	ci = commit
-	co = checkout
 	st = status
+	up = checkout
 
+	l = "!. ~/.config/git/helpers && pretty_git_log"
+	la = "!git l --all"
+	lr = "!git l -30"

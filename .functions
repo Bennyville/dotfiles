@@ -15,3 +15,8 @@ wifi() {
 copyreplace() {
 	for file in $1; do cp "$file" "${file/$2/$3}";done
 }
+
+# fuzzy checkout
+fo() {
+	git branch --no-color --sort=-committerdate --format='%(refname:short)' | fzf --header 'git checkout' | xargs git checkout
+}
