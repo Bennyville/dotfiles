@@ -11,30 +11,37 @@ return {
 
 	-- lsp/completion/snippets
 	{
-		'neovim/nvim-lspconfig',    -- Required
+		"mason-org/mason-lspconfig.nvim",
+		opts = {},
 		dependencies = {
-			-- LSP Support
-			{ 'williamboman/mason.nvim' },  -- Optional
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
+			{ "mason-org/mason.nvim", opts = {} },
+			{
+				'neovim/nvim-lspconfig', -- Required
+				dependencies = {
+					-- LSP Support
+					{ 'williamboman/mason.nvim' }, -- Optional
+					{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-			-- Autocompletion
-			{ 'hrsh7th/nvim-cmp' }, -- Required
-			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{ 'hrsh7th/cmp-buffer' }, -- Optional
-			{ 'hrsh7th/cmp-path' }, -- Optional
-			{ 'saadparwaiz1/cmp_luasnip' }, -- Optional
-			{ 'hrsh7th/cmp-nvim-lua' }, -- Optional
+					-- Autocompletion
+					{ 'hrsh7th/nvim-cmp' }, -- Required
+					{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
+					{ 'hrsh7th/cmp-buffer' }, -- Optional
+					{ 'hrsh7th/cmp-path' }, -- Optional
+					{ 'saadparwaiz1/cmp_luasnip' }, -- Optional
+					{ 'hrsh7th/cmp-nvim-lua' }, -- Optional
 
-			-- Snippets
-			{ 'L3MON4D3/LuaSnip' },    -- Required
-			{ 'rafamadriz/friendly-snippets' }, -- Optional
+					-- Snippets
+					{ 'L3MON4D3/LuaSnip' }, -- Required
+					{ 'rafamadriz/friendly-snippets' }, -- Optional
+				},
+				config = function()
+					require('plugins.config.lsp')
+					require('luasnip.loaders.from_vscode').lazy_load()
+					require('luasnip.loaders.from_lua').load({ paths = '~/.config/nvim/lua/snippets/' })
+				end
+
+			},
 		},
-		config = function()
-			require('plugins.config.lsp')
-			require('luasnip.loaders.from_vscode').lazy_load()
-			require('luasnip.loaders.from_lua').load({paths = '~/.config/nvim/lua/snippets/'})
-		end
-
 	},
 
 	-- treesitter
@@ -53,7 +60,7 @@ return {
 	{
 		'ibhagwan/fzf-lua',
 		dependencies = {
-			{ 'junegunn/fzf', build = './install --bin' },
+			{ 'junegunn/fzf',               build = './install --bin' },
 			{ 'nvim-tree/nvim-web-devicons' } -- optional for icon support
 		},
 		config = function()
@@ -80,7 +87,7 @@ return {
 	{ 'ludovicchabant/vim-lawrencium' },
 
 	-- git
-	{ 
+	{
 		'tpope/vim-fugitive',
 		config = function()
 			require('plugins.config.fugitive')
@@ -95,7 +102,7 @@ return {
 	-- { 'bennyville/nvim-whereami' }
 
 	-- copilot
-	{ 
+	{
 		'github/copilot.vim',
 		config = function()
 			require('plugins.config.copilot')
@@ -113,7 +120,7 @@ return {
 
 	{
 		"danymat/neogen",
-		config = function ()
+		config = function()
 			require('plugins.config.neogen')
 		end
 	}
