@@ -27,11 +27,10 @@ cmp.setup({
 		end,
 	},
 	mapping = {
+		['<S-Tab>']     = nil,
+		['<Tab>']     = nil,
 		['<C-p>']     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
-		['<S-Tab>']     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 		['<C-n>']     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-		['<Tab>']     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-		['<CR>']     = cmp.mapping.confirm({ select = true }),
 		['<C-y>']     = cmp.mapping.confirm({ select = true }),
 		['<C-Space>'] = cmp.mapping.complete(),
 	},
