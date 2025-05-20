@@ -38,6 +38,8 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' }, -- Add luasnip as a source
+		{ name = 'buffer' },
+		{ name = 'path' },
 		-- Add additional sources if needed
 	}),
 })
