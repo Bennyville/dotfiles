@@ -117,7 +117,7 @@ require('mason-lspconfig').setup_handlers({
 		lspconfig.emmet_ls.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { 'html', 'css', 'elixir', 'eelixir', 'heex' },
+			filetypes = { 'html', 'css', 'elixir', 'eelixir', 'heex', 'blade', 'php' },
 		})
 	end,
 	['cssls'] = function()
@@ -131,7 +131,7 @@ require('mason-lspconfig').setup_handlers({
 		lspconfig.html.setup({
 			on_attach = on_attach,
 			capabilities = capabilities,
-			filetypes = { 'html', 'heex' },
+			filetypes = { 'html', 'heex', 'blade', 'php' },
 		})
 	end,
 })
