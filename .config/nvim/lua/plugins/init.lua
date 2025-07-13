@@ -95,7 +95,7 @@ return {
 	},
 
 	-- whereami/copy reference
-	{ dir = '~/Code/private/nvim-whereami' },
+	-- { dir = '~/Code/private/nvim-whereami' },
 	-- { 'bennyville/nvim-whereami' }
 
 	-- copilot
