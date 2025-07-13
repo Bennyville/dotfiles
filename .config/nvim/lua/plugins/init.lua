@@ -94,9 +94,6 @@ return {
 		end
 	},
 
-	-- time tracking
-	{ 'wakatime/vim-wakatime' },
-
 	-- whereami/copy reference
 	{ dir = '~/Code/private/nvim-whereami' },
 	-- { 'bennyville/nvim-whereami' }
@@ -168,16 +165,6 @@ return {
 			},
 		},
 	},
-
-	--obsidian
-	{
-		"epwalsh/obsidian.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		config = function()
-			require('plugins.config.obsidian')
-		end
-	},
-
 	{
 		"danymat/neogen",
 		config = function()
