@@ -2,6 +2,9 @@
 # ZSH completions
 autoload -Uz compinit && compinit
 
+# ZSH pure prompt
+autoload -U promptinit; promptinit
+prompt pure
 
 # User configuration
 for file in ~/.{path,exports,aliases,functions,extra}; do
