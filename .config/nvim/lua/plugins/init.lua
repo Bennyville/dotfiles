@@ -1,13 +1,13 @@
 return {
 	-- colorscheme
-	-- {
-	-- 	'ellisonleao/gruvbox.nvim',
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require('plugins.config.colorscheme')
-	-- 	end,
-	-- },
+	{
+		'ellisonleao/gruvbox.nvim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require('plugins.config.colorscheme')
+		end,
+	},
 
 	-- lsp/completion/snippets
 	{
