@@ -1,5 +1,6 @@
 [user]
 	name = Benny Peckruhn
+	email = benny@bennyville.de
 [core]
 	editor = nvim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
