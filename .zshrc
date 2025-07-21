@@ -1,14 +1,10 @@
 #!/usr/bin/env zsh
-# ZSH
-export ZSH=~/.oh-my-zsh
+# ZSH completions
+autoload -Uz compinit && compinit
 
-ZSH_THEME="robbyrussell"
-
-plugins=(git docker kubectl helm mix rust)
-
-fpath+=("$(brew --prefix)/share/zsh/site-functions")
-
-source $ZSH/oh-my-zsh.sh
+# ZSH pure prompt
+autoload -U promptinit; promptinit
+prompt pure
 
 # User configuration
 for file in ~/.{path,exports,aliases,functions,extra}; do
