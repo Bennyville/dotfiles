@@ -38,6 +38,7 @@ exec --no-startup-id xset s 1800 1800
 exec --no-startup-id nm-applet
 
 exec_always --no-startup-id setxkbmap realprog
+exec_always --no-startup-id numlockx on
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
