@@ -1,26 +1,4 @@
 return {
-	-- colorscheme
-	-- {
-	-- 	'ellisonleao/gruvbox.nvim',
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require('plugins.config.colorscheme')
-	-- 	end,
-	-- },
-	{
-		"neanias/everforest-nvim",
-		version = false,
-		lazy = false,
-		priority = 1000, -- make sure to load this before all the other start plugins
-		-- Optional; default configuration will be used if setup isn't called.
-		config = function()
-			require("everforest").setup({
-				-- Your config here
-			})
-		end,
-	},
-
 	-- lsp/completion/snippets
 	{
 		"mason-org/mason-lspconfig.nvim",
