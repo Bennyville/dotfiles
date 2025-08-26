@@ -1,0 +1,5 @@
+# ensure dotfiles bin directory is loaded first
+export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+export -U PATH

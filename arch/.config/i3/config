@@ -28,7 +28,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork -c 1a1a1a
 
 # Set X screen saver timeout to 30 minutes (1800 seconds)
 exec --no-startup-id xset s 1800 1800
@@ -191,36 +191,107 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-set $bg #282828
-set $red #cc241d
-set $green #98971a
-set $yellow #d79921
-set $blue #458588
-set $purple #b16286
-set $aqua #689d68
-set $gray #a89984
-set $darkgray #1d2021
-set $lightgray #bdae93
+# Forest Evening Theme for i3
+# A warm, nature-inspired color scheme
 
+# Color definitions
+set $forest_bg0     #1a1f1a
+set $forest_bg1     #212621
+set $forest_bg2     #2a312a
+set $forest_bg3     #333d33
+set $forest_bg4     #3d4a3d
+set $forest_fg0     #e8dcc6
+set $forest_fg1     #d4c7aa
+set $forest_fg2     #c0b28a
+set $forest_fg3     #ac9d6a
+set $forest_fg4     #98884a
+set $forest_red     #ff6347
+set $forest_orange  #ff8c00
+set $forest_yellow  #fabd2f
+set $forest_green   #9caf88
+set $forest_aqua    #8ec07c
+set $forest_blue    #83a598
+set $forest_purple  #d3869b
+set $forest_moss    #6b8e23
+set $forest_golden  #daa520
+set $forest_amber   #ffbf00
+set $forest_sage    #9caf88
+set $forest_pine    #4a5d4a
+set $forest_cedar   #704214
+
+# Window colors
+#                       border          background      text            indicator       child_border
+client.focused          $forest_golden  $forest_bg3     $forest_fg0     $forest_amber   $forest_golden
+client.focused_inactive $forest_pine    $forest_bg2     $forest_fg2     $forest_bg4     $forest_pine
+client.unfocused        $forest_bg4     $forest_bg1     $forest_fg3     $forest_bg2     $forest_bg4
+client.urgent           $forest_red     $forest_bg1     $forest_fg0     $forest_orange  $forest_red
+client.placeholder      $forest_bg2     $forest_bg0     $forest_fg4     $forest_bg2     $forest_bg2
+client.background       $forest_bg0
+
+# Window appearance
+default_border pixel 2
+default_floating_border pixel 2
+hide_edge_borders none
+title_align center
+
+# i3bar configuration
 bar {
-    position bottom
     status_command i3status
+    position bottom
+    
     colors {
-        # bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $lightgray
-        # workspaces section            
-        #                    border  backgr. text
-        focused_workspace    $lightgray $lightgray $bg
-        inactive_workspace   $darkgray $darkgray $lightgray
-        active_workspace     $darkgray $darkgray $lightgray
-        urgent_workspace     $red $red $bg
+        # Workspaces
+        background          $forest_bg1
+        statusline          $forest_fg1
+        separator           $forest_pine
+        
+        # Workspace colors
+        #                   border          background      text
+        focused_workspace   $forest_golden  $forest_bg3     $forest_fg0
+        active_workspace    $forest_sage    $forest_bg2     $forest_fg1
+        inactive_workspace  $forest_bg2     $forest_bg1     $forest_fg3
+        urgent_workspace    $forest_red     $forest_bg1     $forest_fg0
+        binding_mode        $forest_amber   $forest_bg2     $forest_bg0
     }
+    
+    # Bar padding and margins
+    padding 2px 8px
+    separator_symbol " | "
+    workspace_buttons yes
+    strip_workspace_numbers no
+    binding_mode_indicator yes
 }
 
-# class                 border|backgr|text|indicator|child_border
-client.focused          $lightgray $lightgray $bg $purple $darkgray
-client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
-client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
-client.urgent           $red $red $white $red $red
+# set $bg #282828
+# set $red #cc241d
+# set $green #98971a
+# set $yellow #d79921
+# set $blue #458588
+# set $purple #b16286
+# set $aqua #689d68
+# set $gray #a89984
+# set $darkgray #1d2021
+# set $lightgray #bdae93
+
+# bar {
+#     position bottom
+#     status_command i3status
+#     colors {
+#         # bar background color
+#         background $bg
+#         # text color used for blocks that do not have a color specified.
+#         statusline $lightgray
+#         # workspaces section            
+#         #                    border  backgr. text
+#         focused_workspace    $lightgray $lightgray $bg
+#         inactive_workspace   $darkgray $darkgray $lightgray
+#         active_workspace     $darkgray $darkgray $lightgray
+#         urgent_workspace     $red $red $bg
+#     }
+# }
+
+# # class                 border|backgr|text|indicator|child_border
+# client.focused          $lightgray $lightgray $bg $purple $darkgray
+# client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
+# client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
+# client.urgent           $red $red $white $red $red
