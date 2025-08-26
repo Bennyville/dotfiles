@@ -90,7 +90,7 @@ case $OS in
     "Darwin")
         log "Detected macOS"
         install_dotfiles "$DOTFILES_DIR/shared"
-        install_dotfiles "$DOTFILES_DIR/macos"
+        install_dotfiles "$DOTFILES_DIR/mac"
         
         if command -v brew >/dev/null 2>&1; then
 			read "confirm?Homebrew detected, update homebrew? (y/n)"
