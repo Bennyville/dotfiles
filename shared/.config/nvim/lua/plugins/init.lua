@@ -1,14 +1,4 @@
 return {
-	-- colorscheme
-	{
-		'ellisonleao/gruvbox.nvim',
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require('plugins.config.colorscheme')
-		end,
-	},
-
 	-- lsp/completion/snippets
 	{
 		"mason-org/mason-lspconfig.nvim",
@@ -169,6 +159,16 @@ return {
 		"danymat/neogen",
 		config = function()
 			require('plugins.config.neogen')
+		end
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = {
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio"
+		},
+		config = function()
+			require('plugins.config.dap')
 		end
 	}
 }
