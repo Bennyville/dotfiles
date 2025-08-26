@@ -14,7 +14,7 @@ networksetup -showpppoestatus "${vpn}" | grep -q "^connected$"
 is_connected=$?
 
 if [ $is_connected -eq 0 ]; then
-	scutil --nc stop "${vpn}"
+	networksetup -disconnectpppoeservice "${vpn}"
 	exit 0
 fi
 
@@ -25,7 +25,7 @@ if [[ -z "${password}" ]]; then
 	exit 1
 fi
 
-scutil --nc start "${vpn}"
+networksetup -connectpppoeservice "${vpn}"
 sleep 1
 osascript -e "tell application \"System Events\" to keystroke tab"
 osascript -e "tell application \"System Events\" to keystroke \"${password}\""
