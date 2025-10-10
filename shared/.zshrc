@@ -15,6 +15,9 @@ done;
 
 export LANG=en_US.UTF-8
 
+# Prompt
+PROMPT='%1~ %(!.#.$) '
+
 # Make aliases work in tmux
 SOURCE="${(%):-%N}"
 while [ -h "$SOURCE" ]; do
