@@ -1,7 +1,12 @@
 #!/usr/bin/env zsh
+
 # ZSH completions
 autoload -Uz compinit && compinit
 
+# Ctrl + Left = backward-word
+bindkey '^[[1;5D' backward-word
+# Ctrl + Right = forward-word
+bindkey '^[[1;5C' forward-word
 
 # User configuration
 for file in ~/.{path,exports,aliases,functions,extra}; do
