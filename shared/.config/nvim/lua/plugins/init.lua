@@ -1,10 +1,10 @@
 return {
 	{
-		'AlexvZyl/nordic.nvim',
+		"ellisonleao/gruvbox.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require('nordic').load()
+			vim.cmd([[colorscheme gruvbox]])
 		end
 	},
 	-- lsp/completion/snippets
