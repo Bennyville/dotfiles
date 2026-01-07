@@ -1,5 +1,6 @@
 # General
 .env
+notes.local.md
 
 # OS specific files
 .DS_Store
