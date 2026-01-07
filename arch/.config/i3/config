@@ -185,30 +185,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg #2E3440
-set $bg_alt #3B4252
-set $fg #D8DEE9
-set $fg_dim #60728A
-set $grey #4C566A
-set $blue #81A1C1
-set $yellow #EBCB8B
-set $purple #B48EAD
-set $green #A3BE8C
-set $cyan #93CCDC
-set $cyan2 #69A7BA
-set $orange #D08770
-set $red #BF616A
-set $hint #BBC4D4
+set $bg #282828
+set $red #cc241d
+set $green #98971a
+set $yellow #d79921
+set $blue #458588
+set $purple #b16286
+set $aqua #689d68
+set $gray #a89984
+set $darkgray #1d2021
+set $lightgray #bdae93
 
-client.focused $blue $bg_alt $fg $green $blue
-client.focused_inactive $bg_alt $bg $fg_dim $bg_alt $bg_alt
-client.unfocused $bg_alt $bg $fg_dim $bg_alt $bg_alt
-client.urgent $red $red $bg $red $red
-client.placeholder $bg $bg $fg $bg $bg
-client.background $bg
+# class border backgr. text indicator child_border
+client.focused $yellow $yellow $darkgray $yellow $yellow
+client.focused_inactive #333333 #5f676a #ffffff #484e50 #5f676a 
+client.unfocused #333333 #222222 #888888 #292d2e #222222 
+client.urgent #2f343a #900000 #ffffff #900000 #900000 
+client.placeholder #000000 #0c0c0c #ffffff #000000 #0c0c0c 
+client.background #ffffff
 
 bar {
-	status_command i3status
+    position bottom
+    status_command i3status
 
 	padding 2px 8px
 	separator_symbol " | "
@@ -216,15 +214,17 @@ bar {
 	strip_workspace_numbers no
 	binding_mode_indicator yes
 
-	colors {
-		background $bg
-		statusline $fg
-		separator $grey
-
-		focused_workspace $blue $blue $bg
-		active_workspace $bg_alt $bg_alt $fg
-		inactive_workspace $bg $bg $fg_dim
-		urgent_workspace $red $red $bg
-		binding_mode $orange $orange $bg
-	}
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $lightgray
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $lightgray $lightgray $bg
+        inactive_workspace   $darkgray $darkgray $lightgray
+        active_workspace     $darkgray $darkgray $lightgray
+        urgent_workspace     $red $red $bg
+    }
 }
+
