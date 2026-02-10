@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 	vim.keymap.set('n', '<leader>f', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
+	vim.keymap.set('n', 'gh', ':LspClangdSwitchSourceHeader<CR>', opts)
   end
 })
 
