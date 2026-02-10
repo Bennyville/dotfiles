@@ -60,6 +60,13 @@ vim.lsp.config("cssls", {
 vim.lsp.config("html", {
 	filetypes = { 'html', 'heex' },
 })
+vim.lsp.config('expert', {
+  cmd = { 'expert' },
+  root_markers = { 'mix.exs', '.git' },
+  filetypes = { 'elixir', 'eelixir', 'heex' },
+})
+
+vim.lsp.enable 'expert'
 
 require('mason').setup()
 require('mason-lspconfig').setup({
