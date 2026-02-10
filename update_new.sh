@@ -57,7 +57,7 @@ install_dotfiles() {
     backup_existing "$source_dir"
     
     rsync -avh \
-        --exclude='.git*' \
+        --exclude='.git/*' \
         --exclude='.DS_Store' \
         --exclude='README*' \
         --exclude='*.md' \
