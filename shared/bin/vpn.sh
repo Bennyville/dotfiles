@@ -28,6 +28,8 @@ fi
 networksetup -connectpppoeservice "${vpn}"
 sleep 1
 osascript -e "tell application \"System Events\" to keystroke tab"
+osascript -e "tell application \"System Events\" to keystroke tab"
+osascript -e "tell application \"System Events\" to keystroke tab"
 osascript -e "tell application \"System Events\" to keystroke \"${password}\""
 osascript -e "tell application \"System Events\" to keystroke return"
 sleep 1
