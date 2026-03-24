@@ -61,7 +61,7 @@ vim.lsp.config("html", {
 	filetypes = { 'html', 'heex' },
 })
 vim.lsp.config('expert', {
-  cmd = { 'expert' },
+  cmd = { '/home/benny/src/expert/apps/expert/burrito_out/expert_linux_amd64', '--stdio' },
   root_markers = { 'mix.exs', '.git' },
   filetypes = { 'elixir', 'eelixir', 'heex' },
 })
