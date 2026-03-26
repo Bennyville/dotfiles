@@ -96,14 +96,6 @@ return {
 	-- { dir = '~/Code/private/nvim-whereami' },
 	{ 'bennyville/nvim-whereami' },
 
-	-- copilot
-	{
-		'github/copilot.vim',
-		config = function()
-			require('plugins.config.copilot')
-		end
-	},
-
 	-- avante
 	{
 		"yetone/avante.nvim",
