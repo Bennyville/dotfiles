@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	vim.keymap.set('n', '[d', '<Cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 	vim.keymap.set('n', ']d', '<Cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 	vim.keymap.set('n', '<leader>f', '<Cmd>lua vim.lsp.buf.format({ async = true })<CR>', opts)
+	vim.keymap.set('n', 'gh', ':LspClangdSwitchSourceHeader<CR>', opts)
   end
 })
 
@@ -44,7 +45,7 @@ vim.lsp.config("lua_ls", {
 vim.lsp.config("rust_analyzer", {
 	settings = {
 		['rust-analyzer'] = {
-			checkOnSave = {
+			check = {
 				command = 'clippy',
 			},
 		},
@@ -59,6 +60,13 @@ vim.lsp.config("cssls", {
 vim.lsp.config("html", {
 	filetypes = { 'html', 'heex' },
 })
+vim.lsp.config('expert', {
+  cmd = { '/home/benny/src/expert/apps/expert/burrito_out/expert_linux_amd64', '--stdio' },
+  root_markers = { 'mix.exs', '.git' },
+  filetypes = { 'elixir', 'eelixir', 'heex' },
+})
+
+vim.lsp.enable 'expert'
 
 require('mason').setup()
 require('mason-lspconfig').setup({
