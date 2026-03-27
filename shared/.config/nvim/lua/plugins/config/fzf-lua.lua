@@ -6,7 +6,7 @@ require("fzf-lua").setup({
     },
 })
 
-vim.keymap.set('n', '<leader>fg', '<cmd>lua require(\'fzf-lua\').live_grep()<cr>', {})
+vim.keymap.set('n', '<leader>fg', '<cmd>lua require(\'fzf-lua\').live_grep({resume=true})<cr>', {})
 vim.keymap.set('n', '<leader>fG', '<cmd>lua require(\'fzf-lua\').grep_cword()<cr>', {})
 vim.keymap.set('v', '<leader>fG', '<cmd>lua require(\'fzf-lua\').grep_visual()<cr>', {})
 vim.keymap.set('n', '<leader>ff', '<cmd>lua require(\'fzf-lua\').files()<cr>', {})
