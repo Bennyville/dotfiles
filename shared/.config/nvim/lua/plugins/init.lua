@@ -47,12 +47,13 @@ return {
 		'nvim-treesitter/nvim-treesitter',
 		build = ':TSUpdate',
 		lazy = false,
+		branch = 'main',
 		config = function()
 			require('plugins.config.treesitter')
 		end
 	},
 	{ 'nvim-treesitter/nvim-treesitter-context' },
-	{ 'nvim-treesitter/playground' },
+	-- { 'nvim-treesitter/playground' },
 
 	-- fuzzy search
 	{

@@ -52,7 +52,7 @@ vim.lsp.config("rust_analyzer", {
 	},
 })
 vim.lsp.config("emmet_ls", {
-	filetypes = { 'html', 'css', 'elixir', 'eelixir', 'heex' },
+	filetypes = { 'html', 'css', 'elixir', 'heex' },
 })
 vim.lsp.config("cssls", {
 	filetypes = { 'css', 'scss', 'less' },
@@ -63,7 +63,7 @@ vim.lsp.config("html", {
 vim.lsp.config('expert', {
   cmd = { '/home/benny/src/expert/apps/expert/burrito_out/expert_linux_amd64', '--stdio' },
   root_markers = { 'mix.exs', '.git' },
-  filetypes = { 'elixir', 'eelixir', 'heex' },
+  filetypes = { 'elixir', 'heex' },
 })
 
 vim.lsp.enable 'expert'
