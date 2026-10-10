@@ -65,8 +65,16 @@ vim.lsp.config('expert', {
   root_markers = { 'mix.exs', '.git' },
   filetypes = { 'elixir', 'heex' },
 })
-
 vim.lsp.enable 'expert'
+vim.lsp.config('clangd', {
+  cmd = {
+	  'clangd',
+	  '--background-index',
+	  '--header-insertion=iwyu',
+	  '--completion-style=detailed',
+	  '--all-scopes-completion',
+  },
+})
 
 require('mason').setup()
 require('mason-lspconfig').setup({
