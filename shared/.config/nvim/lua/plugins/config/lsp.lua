@@ -52,7 +52,7 @@ vim.lsp.config("rust_analyzer", {
 	},
 })
 vim.lsp.config("emmet_ls", {
-	filetypes = { 'html', 'css', 'elixir', 'heex' },
+	filetypes = { 'html', 'css', 'elixir', 'heex', 'php' },
 })
 vim.lsp.config("cssls", {
 	filetypes = { 'css', 'scss', 'less' },
