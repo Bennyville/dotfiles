@@ -37,6 +37,8 @@ exec --no-startup-id xset s 1800 1800
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+exec --no-startup-id dunst
+
 exec_always --no-startup-id setxkbmap realprog
 exec_always --no-startup-id numlockx on
 
